@@ -120,182 +120,182 @@ const questions = [
         userAnswer: null
     },
     {
-        question: "Qual componente é o 'cérebro' do PC? (Alt)",
-        options: ["Placa de vídeo (Alt)", "Processador CPU (Alt)", "Memória RAM (Alt)", "Disco rígido HD (Alt)"],
+        question: "Qual componente é o 'cérebro' do PC?",
+        options: ["Placa de vídeo", "Processador CPU", "Memória RAM", "Disco rígido HD"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual programa é para planilhas? (Alt)",
-        options: ["Editor de Texto (Alt)", "Software de Apresentação (Alt)", "Editor de Planilhas (Alt)", "Editor de Imagem (Alt)"],
+        question: "Qual programa é para planilhas?",
+        options: ["Editor de Texto", "Software de Apresentação", "Editor de Planilhas", "Editor de Imagem"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "Significado de PDF (Alt)",
-        options: ["Formato de Documento Portátil (Alt)", "Arquivo de Dados Pessoais (Alt)", "Formulário de Documento Imprimível (Alt)", "Arquivo Digital Público (Alt)"],
+        question: "Significado de PDF",
+        options: ["Formato de Documento Portátil", "Arquivo de Dados Pessoais", "Formulário de Documento Imprimível", "Arquivo Digital Público"],
         answer: 0,
         userAnswer: null
     },
     {
-        question: "SO da Microsoft (Alt)",
-        options: ["macOS (Alt)", "Linux (Alt)", "Windows (Alt)", "Android (Alt)"],
+        question: "SO da Microsoft",
+        options: ["macOS", "Linux", "Windows", "Android"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "Definição de 'browser' (Alt)",
-        options: ["Editor de textos (Alt)", "Navegador web (Alt)", "Antivírus (Alt)", "Sistema Operacional (Alt)"],
+        question: "Definição de 'browser'",
+        options: ["Editor de textos", "Navegador web", "Antivírus", "Sistema Operacional"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Atalho para copiar (Alt)",
-        options: ["Ctrl + X (Alt)", "Ctrl + C (Alt)", "Ctrl + V (Alt)", "Ctrl + Z (Alt)"],
+        question: "Atalho para copiar",
+        options: ["Ctrl + X", "Ctrl + C", "Ctrl + V", "Ctrl + Z"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual NÃO é armazenamento? (Alt)",
-        options: ["Pen Drive (Alt)", "SSD (Alt)", "Monitor (Alt)", "HD Externo (Alt)"],
+        question: "Qual NÃO é armazenamento?",
+        options: ["Pen Drive", "SSD", "Monitor", "HD Externo"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "Definição de 'email' (Alt)",
-        options: ["Rede social (Alt)", "Mensagem eletrônica (Alt)", "Editor de vídeo (Alt)", "SO (Alt)"],
+        question: "Definição de 'email'",
+        options: ["Rede social", "Mensagem eletrônica", "Editor de vídeo", "SO"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "SO livre (open source)? (Alt)",
-        options: ["Windows (Alt)", "macOS (Alt)", "Linux (Alt)", "iOS (Alt)"],
+        question: "SO livre (open source)?",
+        options: ["Windows", "macOS", "Linux", "iOS"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "Definição de 'Wi-Fi' (Alt)",
-        options: ["Cabo de internet (Alt)", "Rede sem fio (Alt)", "Navegador (Alt)", "Armazenamento (Alt)"],
+        question: "Definição de 'Wi-Fi'",
+        options: ["Cabo de internet", "Rede sem fio", "Navegador", "Armazenamento"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual componente é o 'cérebro' do computador? (Rev)",
-        options: ["GPU (Rev)", "CPU (Rev)", "RAM (Rev)", "HDD (Rev)"],
+        question: "Qual componente é o 'cérebro' do computador?",
+        options: ["GPU", "CPU", "RAM", "HDD"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual programa é usado para criar planilhas? (Rev)",
-        options: ["Processador de Texto (Rev)", "Slides (Rev)", "Software de Planilha (Rev)", "Editor Gráfico (Rev)"],
+        question: "Qual programa é usado para criar planilhas?",
+        options: ["Processador de Texto", "Slides", "Software de Planilha", "Editor Gráfico"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "O que significa a sigla 'PDF'? (Rev)",
-        options: ["Portable Document Format (Rev)", "Personal Data File (Rev)", "Printable Document Form (Rev)", "Public Digital File (Rev)"],
+        question: "O que significa a sigla 'PDF'?",
+        options: ["Portable Document Format", "Personal Data File", "Printable Document Form", "Public Digital File"],
         answer: 0,
         userAnswer: null
     },
     {
-        question: "Qual sistema operacional é desenvolvido pela Microsoft? (Rev)",
-        options: ["Apple macOS (Rev)", "Distribuição Linux (Rev)", "Microsoft Windows (Rev)", "Google Android (Rev)"],
+        question: "Qual sistema operacional é desenvolvido pela Microsoft?",
+        options: ["Apple macOS", "Distribuição Linux", "Microsoft Windows", "Google Android"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "O que é um 'browser'? (Rev)",
-        options: ["Criador de Documentos (Rev)", "Visualizador da Web (Rev)", "Protetor de Vírus (Rev)", "Interface do Usuário (Rev)"],
+        question: "O que é um 'browser'?",
+        options: ["Criador de Documentos", "Visualizador da Web", "Protetor de Vírus", "Interface do Usuário"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual tecla de atalho é usada para copiar um texto? (Rev)",
-        options: ["Recortar (Rev)", "Copiar (Rev)", "Colar (Rev)", "Desfazer (Rev)"],
+        question: "Qual tecla de atalho é usada para copiar um texto?",
+        options: ["Recortar", "Copiar", "Colar", "Desfazer"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual desses NÃO é um dispositivo de armazenamento? (Rev)",
-        options: ["Unidade Flash (Rev)", "Unidade de Estado Sólido (Rev)", "Tela (Rev)", "Disco Portátil (Rev)"],
+        question: "Qual desses NÃO é um dispositivo de armazenamento?",
+        options: ["Unidade Flash", "Unidade de Estado Sólido", "Tela", "Disco Portátil"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "O que é um 'email'? (Rev)",
-        options: ["Plataforma Social (Rev)", "Correspondência Digital (Rev)", "Software de Edição (Rev)", "Ambiente Operacional (Rev)"],
+        question: "O que é um 'email'?",
+        options: ["Plataforma Social", "Correspondência Digital", "Software de Edição", "Ambiente Operacional"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual desses é um exemplo de sistema operacional livre (open source)? (Rev)",
-        options: ["Windows OS (Rev)", "Mac OS (Rev)", "Linux Kernel (Rev)", "iOS Mobile (Rev)"],
+        question: "Qual desses é um exemplo de sistema operacional livre (open source)?",
+        options: ["Windows OS", "Mac OS", "Linux Kernel", "iOS Mobile"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "O que é 'Wi-Fi'? (Rev)",
-        options: ["Conexão por Fio (Rev)", "Tecnologia Wireless (Rev)", "Aplicativo de Navegação (Rev)", "Dispositivo de Backup (Rev)"],
+        question: "O que é 'Wi-Fi'?",
+        options: ["Conexão por Fio", "Tecnologia Wireless", "Aplicativo de Navegação", "Dispositivo de Backup"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual componente é o 'cérebro' do computador? (V3)",
-        options: ["Vídeo Card (V3)", "Processador Central (V3)", "Memória de Acesso Aleatório (V3)", "Drive de Disco Rígido (V3)"],
+        question: "Qual componente é o 'cérebro' do computador?",
+        options: ["Vídeo Card", "Processador Central", "Memória de Acesso Aleatório", "Drive de Disco Rígido"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual programa é para criar planilhas? (V3)",
-        options: ["MS Word (V3)", "MS PowerPoint (V3)", "MS Excel (V3)", "Adobe Photoshop (V3)"],
+        question: "Qual programa é para criar planilhas?",
+        options: ["MS Word", "MS PowerPoint", "MS Excel", "Adobe Photoshop"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "Significado de PDF (V3)",
-        options: ["Formato Portátil de Documento (V3)", "Ficheiro Pessoal de Dados (V3)", "Formulário Imprimível de Documento (V3)", "Ficheiro Público Digital (V3)"],
+        question: "Significado de PDF",
+        options: ["Formato Portátil de Documento", "Ficheiro Pessoal de Dados", "Formulário Imprimível de Documento", "Ficheiro Público Digital"],
         answer: 0,
         userAnswer: null
     },
     {
-        question: "SO da Microsoft (V3)",
-        options: ["macOS (V3)", "Ubuntu (V3)", "Windows (V3)", "Android (V3)"],
+        question: "SO da Microsoft",
+        options: ["macOS", "Ubuntu", "Windows", "Android"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "Definição de 'browser' (V3)",
-        options: ["App de Texto (V3)", "Navegador de Internet (V3)", "Software Antivírus (V3)", "Gerenciador de Sistema (V3)"],
+        question: "Definição de 'browser'",
+        options: ["App de Texto", "Navegador de Internet", "Software Antivírus", "Gerenciador de Sistema"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Atalho para copiar (V3)",
-        options: ["Control+X (V3)", "Control+C (V3)", "Control+V (V3)", "Control+Z (V3)"],
+        question: "Atalho para copiar",
+        options: ["Control+X", "Control+C", "Control+V", "Control+Z"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "Qual NÃO é armazenamento? (V3)",
-        options: ["Flash Drive (V3)", "Solid State Drive (V3)", "Display (V3)", "External Drive (V3)"],
+        question: "Qual NÃO é armazenamento?",
+        options: ["Flash Drive", "Solid State Drive", "Display", "External Drive"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "Definição de 'email' (V3)",
-        options: ["App de Mídia Social (V3)", "Mensageria Eletrônica (V3)", "App de Edição de Vídeo (V3)", "Plataforma de Sistema (V3)"],
+        question: "Definição de 'email'",
+        options: ["App de Mídia Social", "Mensageria Eletrônica", "App de Edição de Vídeo", "Plataforma de Sistema"],
         answer: 1,
         userAnswer: null
     },
     {
-        question: "SO livre (open source)? (V3)",
-        options: ["Windows 11 (V3)", "macOS Ventura (V3)", "Linux Mint (V3)", "iOS 16 (V3)"],
+        question: "SO livre (open source)?",
+        options: ["Windows 11", "macOS Ventura", "Linux Mint", "iOS 16"],
         answer: 2,
         userAnswer: null
     },
     {
-        question: "Definição de 'Wi-Fi' (V3)",
-        options: ["Cabo Ethernet (V3)", "Comunicação Sem Fio (V3)", "Cliente Web (V3)", "Unidade de Armazenamento (V3)"],
+        question: "Definição de 'Wi-Fi'",
+        options: ["Cabo Ethernet", "Comunicação Sem Fio", "Cliente Web", "Unidade de Armazenamento"],
         answer: 1,
         userAnswer: null
     }
@@ -641,7 +641,7 @@ function exitReviewMode() {
     resultContainerElement.style.display = 'block';
     nextButton.style.display = 'inline-block'; // Show original next button if needed later
     // Restore the main quiz next button's correct state (visible if quiz not at end, hidden if it was)
-    if (currentQuestion >= questions.length -1 && !isInReviewMode) { // Check if quiz was at its end
+    if (currentQuestion >= QUESTIONS_PER_SESSION -1 && !isInReviewMode) { // Check if quiz was at its end (use QUESTIONS_PER_SESSION)
         nextButton.style.display = 'none'; // Should be "Ver Resultado" or hidden
     } else {
         nextButton.style.display = 'inline-block';
@@ -718,7 +718,7 @@ prevReviewButton.addEventListener('click', () => {
 });
 
 nextReviewButton.addEventListener('click', () => {
-    if (currentReviewQuestionIndex < questions.length - 1) {
+    if (currentReviewQuestionIndex < QUESTIONS_PER_SESSION - 1) { // Use QUESTIONS_PER_SESSION
         currentReviewQuestionIndex++;
         loadReviewQuestion();
     }
