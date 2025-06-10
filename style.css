@@ -1,22 +1,22 @@
 :root {
-    --primary-color: #3B82F6;    /* Modern Blue */
-    --secondary-color: #1D4ED8;  /* Deeper Blue */
-    --accent-color: #3B82F6;     /* Using Primary for selected option */
-    --dark-color: #1F2937;       /* Cool Dark Gray/Charcoal */
-    --light-color: #F9FAFB;      /* Very Light Gray for option bg */
-    --success-color: #10B981;    /* Emerald Green */
-    --danger-color: #EF4444;     /* Red */
+    --primary-color: #4F46E5;    /* Indigo */
+    --secondary-color: #3730A3;  /* Darker Indigo */
+    --accent-color: #4F46E5;     /* Indigo for selected option */
+    --dark-color: #111827;       /* Very Dark Gray/Almost Black */
+    --light-color: #FFFFFF;      /* Pure White for option bg */
+    --success-color: #059669;    /* Darker Emerald Green */
+    --danger-color: #DC2626;     /* Darker Red */
 
-    --border-radius: 10px; /* From previous refinement, keep */
-    --box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Softened shadow, keep */
+    --border-radius: 10px;
+    --box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
 
-    /* New specific variables for easier control if needed */
-    --quiz-header-bg-start: #3B82F6;
-    --quiz-header-bg-end: #2563EB;
+    --quiz-header-bg-start: #4F46E5;
+    --quiz-header-bg-end: #3730A3;
     --button-text-color: #FFFFFF;
-    --option-border-color: #D1D5DB; /* Light gray for option borders */
-    --option-hover-bg-color: #E5E7EB; /* Slightly darker gray for option hover */
+    --option-border-color: #D1D5DB;
+    --option-hover-bg-color: #F3F4F6; /* Lighter hover for white options */
+    --quiz-container-bg: #FFFFFF; /* Explicit white for quiz container */
 }
 
 * {
@@ -32,15 +32,15 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #2b2d42; /* Fallback color */
+    background-color: var(--dark-color); /* Fallback using new dark color */
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px 15px; /* More padding vertically, less horizontally by default */
-    color: var(--dark-color); /* This color is for text *inside* .quiz-container mostly */
-    line-height: 1.65; /* Slightly more line height - kept from previous refinement */
-    position: relative; /* For z-indexing context for the pseudo-element */
+    padding: 25px 15px;
+    color: var(--dark-color);
+    line-height: 1.65;
+    position: relative;
 }
 
 body::before {
@@ -50,39 +50,39 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
 
 .quiz-container {
     width: 100%;
-    max-width: 760px; /* Slightly more compact */
-    background: white; /* This should remain white for readability of content */
+    max-width: 760px;
+    background: var(--quiz-container-bg);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     overflow: hidden;
-    position: relative; /* Ensures it can have a z-index */
-    z-index: 1; /* Places it above the body::before pseudo-element */
-    margin: 20px auto; /* Ensures centering if body padding is removed */
+    position: relative;
+    z-index: 1;
+    margin: 20px auto;
 }
 
 .quiz-header {
     background: linear-gradient(to right, var(--quiz-header-bg-start), var(--quiz-header-bg-end));
-    color: var(--button-text-color); /* Assuming header text should be light */
-    padding: 35px 25px; /* Increased padding */
+    color: var(--button-text-color);
+    padding: 35px 25px;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator */
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 h1 {
-    font-size: 2.1rem; /* Slightly larger */
-    margin-bottom: 12px; /* More spacing */
+    font-size: 2.1rem;
+    margin-bottom: 12px;
     font-weight: 700;
 }
 
 .quiz-progress {
     height: 6px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly less opaque for darker header */
     width: 100%;
     margin-top: 20px;
     border-radius: 3px;
@@ -91,74 +91,74 @@ h1 {
 
 .progress-bar {
     height: 100%;
-    background-color: white;
+    background-color: var(--button-text-color); /* White progress bar */
     width: 0%;
     transition: var(--transition);
 }
 
 .quiz-body {
-    padding: 35px; /* Increased padding */
+    padding: 35px;
 }
 
 .question {
-    font-size: 1.35rem; /* Slightly larger */
-    margin-bottom: 30px; /* More spacing */
+    font-size: 1.35rem;
+    margin-bottom: 30px;
     font-weight: 600;
     color: var(--dark-color);
-    line-height: 1.5; /* Improved readability */
+    line-height: 1.5;
 }
 
 .options {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 18px; /* Slightly increased gap */
-    margin-bottom: 35px; /* More spacing */
+    gap: 18px;
+    margin-bottom: 35px;
 }
 
 .option {
     padding: 15px 20px;
-    background-color: var(--light-color);
+    background-color: var(--light-color); /* Now pure white */
     border: 1px solid var(--option-border-color);
     color: var(--dark-color);
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition);
     font-weight: 500;
-    text-align: left; /* Restored */
+    text-align: left;
 }
 
 .option:hover {
-    background-color: var(--option-hover-bg-color);
+    background-color: var(--option-hover-bg-color); /* Very light gray */
     border-color: var(--accent-color);
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .option.selected {
-    background-color: var(--accent-color);
+    background-color: var(--accent-color); /* Indigo */
     color: var(--button-text-color);
-    border-color: var(--secondary-color); /* Darker border for selected */
+    border-color: var(--secondary-color); /* Darker Indigo border */
 }
 
 .option.correct {
-    background-color: var(--success-color);
+    background-color: var(--success-color); /* Darker Emerald Green */
     color: var(--button-text-color);
-    border-color: #059669; /* Darker green border */
+    border-color: #047857; /* Even darker green for border */
 }
 
 .option.wrong {
-    background-color: var(--danger-color);
+    background-color: var(--danger-color); /* Darker Red */
     color: var(--button-text-color);
-    border-color: #B91C1C; /* Darker red border */
+    border-color: #991B1B; /* Even darker red for border */
 }
 
 .quiz-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 35px; /* Increased padding */
-    background-color: #f8f9fa;
-    border-top: 1px solid #e0e0e0; /* Softer border */
+    padding: 25px 35px;
+    background-color: var(--light-color); /* Pure white, or could be a very light gray like F9FAFB */
+    border-top: 1px solid var(--option-border-color);
 }
 
 .question-counter {
@@ -168,79 +168,72 @@ h1 {
 }
 
 .btn {
-    padding: 12px 28px; /* Adjusted padding */
+    padding: 12px 28px;
     border: none;
     border-radius: var(--border-radius);
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for all buttons */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.btn-next {
-    background-color: var(--primary-color);
+.btn-next, .btn-restart, .btn-review, .btn-prev-review, .btn-next-review, .btn-exit-review {
+    background-color: var(--primary-color); /* Indigo */
     color: var(--button-text-color);
 }
 
-.btn-next:hover:not(:disabled) {
-    background-color: var(--secondary-color);
+.btn-next:hover:not(:disabled),
+.btn-restart:hover,
+.btn-review:hover,
+.btn-prev-review:hover,
+.btn-next-review:hover,
+.btn-exit-review:hover {
+    background-color: var(--secondary-color); /* Darker Indigo */
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(var(--secondary-color), 0.25);
 }
 
 .btn-next:disabled {
-    background-color: #9CA3AF; /* A neutral gray */
-    color: #E5E7EB;
+    background-color: #6B7280; /* Medium Gray for disabled */
+    color: #D1D5DB; /* Light Gray text */
     cursor: not-allowed;
     transform: none;
-    box-shadow: none; /* No shadow for disabled */
+    box-shadow: none;
 }
 
 .result-container {
-    padding: 40px 35px; /* Adjusted padding */
+    padding: 40px 35px;
     text-align: center;
     display: none;
 }
 
 .result-title {
-    font-size: 2.2rem; /* Slightly larger */
+    font-size: 2.2rem;
     margin-bottom: 20px;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Indigo */
 }
 
 .result-score {
-    font-size: 3.5rem; /* More prominent */
+    font-size: 3.5rem;
     font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 25px; /* More spacing */
+    color: var(--secondary-color); /* Darker Indigo */
+    margin-bottom: 25px;
 }
 
 .result-message {
-    font-size: 1.25rem; /* Slightly larger */
+    font-size: 1.25rem;
     line-height: 1.6;
-    margin-bottom: 35px; /* More spacing */
-}
-
-.btn-restart {
-    background-color: var(--primary-color);
-    color: var(--button-text-color);
-    padding: 15px 35px; /* Adjusted padding */
-    font-size: 1.1rem;
-}
-
-.btn-restart:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(var(--secondary-color), 0.25);
+    margin-bottom: 35px;
+    color: var(--dark-color);
 }
 
 @media (max-width: 768px) {
     .quiz-container {
         max-width: 100%;
-        margin: 10px auto; /* Reduced margin for smaller screens */
+        margin: 10px auto;
     }
     body {
-        padding: 15px 10px; /* Reduce body padding on small screens */
+        padding: 15px 10px;
     }
     .quiz-header {
         padding: 25px 20px;
@@ -249,10 +242,10 @@ h1 {
         font-size: 1.8rem;
     }
     .quiz-body {
-        padding: 25px; /* Adjusted padding */
+        padding: 25px;
     }
     .question {
-        font-size: 1.15rem; /* Adjusted font size */
+        font-size: 1.15rem;
         margin-bottom: 20px;
     }
     .options {
@@ -260,10 +253,9 @@ h1 {
         margin-bottom: 25px;
     }
     .option {
-        padding: 15px 20px; /* Restore padding */
-        font-size: 0.95rem; /* Keep font size adjustment for mobile */
+        padding: 15px 20px;
+        font-size: 0.95rem;
     }
-    /* .option-image styles removed from media query */
     .quiz-footer {
         padding: 20px 25px;
     }
@@ -284,28 +276,28 @@ h1 {
         font-size: 1.1rem;
         margin-bottom: 25px;
     }
-    .btn-restart {
+    .btn-restart { /* Specific if needed, else .btn covers it */
         padding: 12px 25px;
         font-size: 1rem;
     }
     .detailed-results {
-        margin-top: 25px; /* Adjusted margin */
+        margin-top: 25px;
     }
     .detailed-results h3 {
-        font-size: 1.25rem; /* Adjusted font size */
+        font-size: 1.25rem;
         margin-bottom: 12px;
     }
     .result-item {
-        padding: 12px; /* Adjusted padding */
-        margin-bottom: 12px; /* Adjusted margin */
+        padding: 12px;
+        margin-bottom: 12px;
     }
     .result-item p {
-        font-size: 0.9rem; /* Adjusted font size */
+        font-size: 0.9rem;
         margin-bottom: 6px;
         line-height: 1.5;
     }
     .result-item .question-text {
-        font-size: 0.95rem; /* Adjusted font size */
+        font-size: 0.95rem;
         margin-bottom: 8px;
     }
     .high-score-display {
@@ -318,26 +310,26 @@ h1 {
 /* Styles for detailed-results */
 
 .detailed-results {
-    margin-top: 35px; /* Increased margin */
+    margin-top: 35px;
     text-align: left;
 }
 
 .detailed-results h3 {
-    margin-bottom: 18px; /* Increased margin */
-    color: var(--primary-color);
-    font-size: 1.5rem; /* Slightly larger */
+    margin-bottom: 18px;
+    color: var(--primary-color); /* Indigo */
+    font-size: 1.5rem;
     font-weight: 600;
-    border-bottom: 1px solid #eee; /* Separator */
-    padding-bottom: 10px; /* Spacing for separator */
+    border-bottom: 1px solid #E5E7EB; /* Lighter border */
+    padding-bottom: 10px;
 }
 
 .result-item {
-    background-color: var(--light-color);
-    border: 1px solid #e0e0e0;
+    background-color: var(--light-color); /* White */
+    border: 1px solid var(--option-border-color); /* Light gray border */
     border-radius: var(--border-radius);
-    padding: 18px; /* Increased padding */
-    margin-bottom: 18px; /* Increased margin */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04); /* Softer shadow */
+    padding: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
     transition: var(--transition);
 }
 .result-item:hover {
@@ -346,9 +338,10 @@ h1 {
 }
 
 .result-item p {
-    margin-bottom: 10px; /* Adjusted spacing */
+    margin-bottom: 10px;
     font-size: 1rem;
-    line-height: 1.6; /* Improved readability */
+    line-height: 1.6;
+    color: var(--dark-color);
 }
 .result-item p:last-child {
     margin-bottom: 0;
@@ -356,15 +349,15 @@ h1 {
 
 .result-item .user-answer span,
 .result-item .correct-answer span {
-    font-weight: 600; /* Bolder for the actual answer part */
+    font-weight: 600;
 }
 
 .result-item .user-answer.correct span {
-    color: var(--success-color); /* Text color */
+    color: var(--success-color);
 }
 
 .result-item .user-answer.wrong span {
-    color: var(--danger-color); /* Text color */
+    color: var(--danger-color);
 }
 
 .result-item .correct-answer span {
@@ -373,13 +366,13 @@ h1 {
 
 .result-item .question-text {
      font-weight: 600;
-     margin-bottom: 12px; /* Adjusted spacing */
-     color: var(--secondary-color);
-     font-size: 1.05rem; /* Slightly larger */
+     margin-bottom: 12px;
+     color: var(--secondary-color); /* Darker Indigo */
+     font-size: 1.05rem;
 }
 
 .high-score-display {
-    color: white;
+    color: var(--button-text-color); /* White */
     margin-top: 10px;
     font-size: 0.9rem;
     font-weight: 500;
@@ -389,98 +382,75 @@ h1 {
     display: inline-block;
 }
 
-/* Add these styles to style.css */
-
 .btn-review {
-    background-color: var(--primary-color); /* Using primary for consistency */
-    color: var(--button-text-color);
-    margin-left: 10px; /* Adjust as needed */
+    /* background-color: var(--primary-color); Already covered by .btn-next rule */
+    /* color: var(--button-text-color); Already covered by .btn-next rule */
+    margin-left: 10px;
 }
 
-.btn-review:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(var(--secondary-color), 0.25);
-}
+/* .btn-review:hover already covered by general button hover */
 
 .review-nav {
-    display: flex; /* Will be set to flex by JS when shown */
+    display: flex;
     gap: 10px;
 }
 
-.btn-prev-review, .btn-next-review, .btn-exit-review {
-     background-color: var(--primary-color);
-     color: var(--button-text-color);
-}
+/* .btn-prev-review, .btn-next-review, .btn-exit-review covered by general .btn-next rule */
+/* Hover states also covered */
 
-.btn-prev-review:hover, .btn-next-review:hover, .btn-exit-review:hover {
-     background-color: var(--secondary-color);
-     transform: translateY(-3px);
-     box-shadow: 0 4px 10px rgba(var(--secondary-color), 0.2);
-}
 
 /* Styles for options during review */
 .option.review-user-selected {
-    border: 3px solid var(--dark-color) !important; /* Highlight user's actual selection */
-    /* Add a special background or icon if they were wrong */
+    border: 3px solid var(--dark-color) !important;
 }
 .option.review-user-wrong {
      background-color: var(--danger-color) !important;
-     color: white !important;
-     border-color: var(--danger-color) !important;
+     color: var(--button-text-color) !important;
+     border-color: #991B1B !important; /* Even darker red border for review wrong */
 }
-/* Image filter comments removed */
 
- .option.review-correct {
+.option.review-correct {
      background-color: var(--success-color) !important;
-     color: white !important;
-     border-color: var(--success-color) !important;
+     color: var(--button-text-color) !important;
+     border-color: #047857 !important; /* Even darker green for review correct */
  }
-/* Image filter comments removed */
 
-
-/* Ensure options are not clickable during review */
 .review-mode .option {
     cursor: default;
 }
 .review-mode .option:hover {
-    /* Keep original background or a neutral one, no transform or shadow */
-    background-color: var(--light-color);
-    border-color: #dee2e6; /* Reset border color from other states if needed */
+    background-color: var(--light-color); /* White */
+    border-color: var(--option-border-color); /* Default border */
     transform: none;
     box-shadow: none;
 }
-/* If .selected was applied from quiz mode, neutralize it in review */
 .review-mode .option.selected {
-     background-color: var(--light-color);
+     background-color: var(--light-color); /* White */
      color: var(--dark-color);
-     border-color: #dee2e6; /* Default border */
+     border-color: var(--option-border-color);
 }
 
-/* Specificity: if an option was user's selected AND correct, ensure correct style wins over generic selected */
 .review-mode .option.review-user-selected.review-correct {
-    background-color: var(--success-color) !important;
-    color: white !important;
-    border: 3px solid var(--dark-color) !important; /* Keep user selected border */
+    background-color: var(--success-color) !important; /* Darker Emerald Green */
+    color: var(--button-text-color) !important;
+    border: 3px solid var(--dark-color) !important;
 }
 
-/* Specificity: if an option was user's selected (and wrong), ensure wrong style wins */
 .review-mode .option.review-user-selected.review-user-wrong {
-    background-color: var(--danger-color) !important;
-    color: white !important;
-    border: 3px solid var(--dark-color) !important; /* Keep user selected border */
+    background-color: var(--danger-color) !important; /* Darker Red */
+    color: var(--button-text-color) !important;
+    border: 3px solid var(--dark-color) !important;
 }
 
-/* Adjust review buttons within media query if needed */
 @media (max-width: 768px) {
     .btn-review {
         margin-left: 0;
-        margin-top: 10px; /* Stack review button on small screens */
-        display: block; /* Make it full width or block */
+        margin-top: 10px;
+        display: block;
         width: 100%;
     }
     .review-nav {
-        flex-direction: column; /* Stack review nav buttons */
+        flex-direction: column;
         width: 100%;
     }
     .review-nav .btn {
@@ -490,8 +460,7 @@ h1 {
     .review-nav .btn:last-child {
         margin-bottom: 0;
     }
-    /* Ensure high-score display is also adjusted in the same media query if it wasn't caught above */
-    .high-score-display { /* This is a duplication if the above worked, but ensures it's present */
+    .high-score-display {
         font-size: 0.8rem;
         margin-top: 8px;
         padding: 4px 8px;

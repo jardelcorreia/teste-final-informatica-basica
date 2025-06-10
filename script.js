@@ -311,9 +311,9 @@ function showResult() {
         const correctAnswerDisplay = q.options[q.answer];
         correctAnswerTextP.innerHTML = `Resposta correta: <span class="correct-answer">${correctAnswerDisplay}</span>`;
 
-        resultItem.appendChild(questionTextP);
+        resultItem.appendChild(questionText); // Corrected: questionTextP to questionText
         resultItem.appendChild(userAnswerTextP);
-        resultItem.appendChild(correctAnswerTextP); // Corrected variable name
+        resultItem.appendChild(correctAnswerTextP);
         detailedResultsElement.appendChild(resultItem);
     });
 }
