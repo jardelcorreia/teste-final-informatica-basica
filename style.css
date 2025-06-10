@@ -124,8 +124,52 @@ h1 {
     cursor: pointer;
     transition: var(--transition);
     font-weight: 500;
-    text-align: left;
+    /* text-align: left; Removed for flex */
+    display: flex; /* Re-add/ensure for text + icon layout */
+    align-items: center;
+    justify-content: space-between; /* Puts icon container to the right */
 }
+
+.option-text { /* Ensure this class is on the text span */
+    flex-grow: 1;
+    text-align: left; /* If not already default for span inside flex */
+}
+
+.feedback-icon-container {
+    width: 24px;  /* Or size of your icons */
+    height: 24px; /* Or size of your icons */
+    margin-left: 10px; /* Space from text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease; /* For smooth appearance of content later */
+}
+
+/* Later, the actual icon (img or svg within the container) will be styled */
+.feedback-icon-container svg,
+.feedback-icon-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: scaleFadeIn 0.3s ease-out forwards; /* Apply animation */
+}
+
+/* Removed duplicated .feedback-icon-container svg specific rule as it's covered above */
+
+@keyframes scaleFadeIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.icon-color-primary { color: var(--primary-color); }
+.icon-color-success { color: var(--success-color); }
+.icon-color-danger { color: var(--danger-color); }
 
 .option:hover {
     background-color: var(--option-hover-bg-color); /* Very light gray */

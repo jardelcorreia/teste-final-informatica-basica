@@ -121,6 +121,10 @@ const questions = [
     }
 ];
 
+const selectedIconSVG = '<svg viewBox="0 0 100 100" fill="currentColor" class="icon-selected-dot"><circle cx="50" cy="50" r="40"></circle></svg>';
+const correctIconSVG = '<svg viewBox="0 0 100 100" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none" class="icon-correct-tick"><path d="M20 55 L40 75 L80 35"></path></svg>';
+const wrongIconSVG = '<svg viewBox="0 0 100 100" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none" class="icon-wrong-cross"><path d="M20 20 L80 80 M20 80 L80 20"></path></svg>';
+
 // Elementos do DOM
 // ... (existing elements)
 const detailedResultsElement = document.getElementById('detailed-results'); // Add this
@@ -169,63 +173,119 @@ let score = 0;
 let selectedOption = null;
 let quizCompleted = false;
 
+function setOptionIcon(optionElement, iconSVG = '', iconColorClass = '') {
+    const iconContainer = optionElement.querySelector('.feedback-icon-container');
+    if (iconContainer) {
+        iconContainer.innerHTML = iconSVG;
+        // Reset color classes
+        iconContainer.classList.remove('icon-color-primary', 'icon-color-success', 'icon-color-danger');
+        if (iconColorClass) {
+            iconContainer.classList.add(iconColorClass);
+        }
+    }
+}
+
+function clearAllOptionIcons() {
+    document.querySelectorAll('.option').forEach(optElement => {
+        setOptionIcon(optElement); // Clear icon and color class
+    });
+}
+
 // Carregar questão
 function loadQuestion() {
-    quizContainerElement.classList.remove('review-mode'); // Ensure not in review mode styling
+    quizContainerElement.classList.remove('review-mode');
+    clearAllOptionIcons(); // Clear icons from previous question
+    quizCompleted = false; // Reset for the new question
+
     const questionData = questions[currentQuestion];
     questionElement.textContent = questionData.question;
     optionsElement.innerHTML = '';
 
-    questionData.options.forEach((optionString, index) => { // optionItem is now optionString
+    questionData.options.forEach((optionString, index) => {
         const optionElement = document.createElement('div');
         optionElement.classList.add('option');
-        optionElement.textContent = optionString; // Directly set text content
+
+        const textSpan = document.createElement('span');
+        textSpan.classList.add('option-text');
+        textSpan.textContent = optionString;
+        optionElement.appendChild(textSpan);
+
+        const iconContainer = document.createElement('span');
+        iconContainer.classList.add('feedback-icon-container');
+        optionElement.appendChild(iconContainer);
 
         optionElement.dataset.index = index;
-        optionElement.addEventListener('click', selectOption);
-        optionsElement.appendChild(optionElement);
+        optionElement.addEventListener('click', selectOption); // Ensure listener is present
+        optionElement.style.cursor = 'pointer'; // Ensure cursor is pointer
+        optionsElement.appendChild(optionElement); // Append the fully constructed optionElement here
     });
 
     updateProgress();
     nextButton.style.display = 'inline-block';
     reviewNavElement.style.display = 'none';
+    nextButton.textContent = 'Próxima Pergunta'; // Reset button text from "Ver Resultado"
     nextButton.disabled = true;
     selectedOption = null;
 }
 
 // Selecionar opção
 function selectOption(e) {
-    if (quizCompleted) return;
+    if (quizCompleted) return; // Don't allow selection if quiz/question is 'done'
 
-    const selectedElement = e.target;
+    const selectedElement = e.target.closest('.option'); // Ensure we get the .option div
+    if (!selectedElement) return; // Click was not on an option or its child
+
     const optionIndex = parseInt(selectedElement.dataset.index);
 
-    // Remover seleção anterior
-    const options = document.querySelectorAll('.option');
-    options.forEach(option => {
-        option.classList.remove('selected');
+    // Clear previous visual selections and icons
+    const allOptionElements = document.querySelectorAll('.option');
+    allOptionElements.forEach(opt => {
+        opt.classList.remove('selected');
+        setOptionIcon(opt); // Clear icon and its specific color
     });
 
-    // Marcar opção selecionada
+    // Mark new selection
     selectedElement.classList.add('selected');
+    setOptionIcon(selectedElement, selectedIconSVG, 'icon-color-primary'); // Show selected icon with primary color
+
     selectedOption = optionIndex;
-    // Store user's answer
-    questions[currentQuestion].userAnswer = optionIndex; // Add this line
+    questions[currentQuestion].userAnswer = optionIndex;
     nextButton.disabled = false;
 }
 
 // Verificar resposta
 function checkAnswer() {
     const question = questions[currentQuestion];
-    const options = document.querySelectorAll('.option');
+    const allOptionElements = document.querySelectorAll('.option'); // Get all option elements
+    // const selectedOptionElement = allOptionElements[selectedOption]; // User's chosen option element - Not strictly needed with current logic
+    // const correctOptionElement = allOptionElements[question.answer]; // Actual correct option element - Not strictly needed
 
-    options.forEach((option, index) => {
-        option.classList.remove('correct', 'wrong');
-        if (index === question.answer) {
-            option.classList.add('correct');
-        } else if (index === selectedOption && index !== question.answer) {
-            option.classList.add('wrong');
+    quizCompleted = true; // Mark question as 'answered' to prevent re-selection
+    nextButton.disabled = false; // Enable next button
+
+    // Update classes and icons
+    allOptionElements.forEach((optElement, index) => {
+        // Clear any neutral "selected" icon first before applying final correct/wrong
+        setOptionIcon(optElement); // Clears current icon (like the selected dot)
+
+        if (index === question.answer) { // This is the correct answer
+            optElement.classList.add('correct');
+            // Always show correct icon on the correct answer, even if not selected by user
+            setOptionIcon(optElement, correctIconSVG, 'icon-color-success');
         }
+
+        if (index === selectedOption) { // This is what the user picked
+            if (selectedOption === question.answer) {
+                // Already handled by above block, class 'correct' is added
+                // Icon is already set to correctIconSVG
+            } else {
+                optElement.classList.add('wrong');
+                setOptionIcon(optElement, wrongIconSVG, 'icon-color-danger');
+            }
+        }
+        // Make options non-interactive after answer is revealed for this question
+        optElement.removeEventListener('click', selectOption);
+        optElement.style.cursor = 'default';
     });
 
     if (selectedOption === question.answer) {
@@ -373,24 +433,53 @@ function exitReviewMode() {
 }
 
 function loadReviewQuestion() {
+    quizContainerElement.classList.add('review-mode'); // Ensure review mode class is on
+    // clearAllOptionIcons(); // Optional: Clear all icons upfront if needed, though setOptionIcon below will overwrite
+
     const questionData = questions[currentReviewQuestionIndex];
     questionElement.textContent = questionData.question;
-    optionsElement.innerHTML = '';
+    optionsElement.innerHTML = ''; // Clear previous options
 
-    questionData.options.forEach((optionString, index) => { // optionItem is now optionString
+    questionData.options.forEach((optionString, index) => {
         const optionElement = document.createElement('div');
         optionElement.classList.add('option');
-        optionElement.textContent = optionString; // Directly set text content
+        // Make options non-interactive in review mode by default
+        optionElement.style.cursor = 'default';
+        // No event listener for selection needed here
 
+        const textSpan = document.createElement('span');
+        textSpan.classList.add('option-text');
+        textSpan.textContent = optionString;
+        optionElement.appendChild(textSpan);
+
+        const iconContainer = document.createElement('span');
+        iconContainer.classList.add('feedback-icon-container');
+        optionElement.appendChild(iconContainer);
+
+        // Initial state: clear any icon from previous rendering of this option slot
+        setOptionIcon(optionElement);
+
+        // Style for the actual correct answer
         if (index === questionData.answer) {
-            optionElement.classList.add('review-correct');
+            optionElement.classList.add('review-correct'); // Existing class for background
+            setOptionIcon(optionElement, correctIconSVG, 'icon-color-success');
         }
+
+        // Style for the user's answer
         if (index === questionData.userAnswer) {
-            optionElement.classList.add('review-user-selected');
+            optionElement.classList.add('review-user-selected'); // Existing class for potential border/emphasis
+
             if (questionData.userAnswer !== questionData.answer) {
-                optionElement.classList.add('review-user-wrong');
+                optionElement.classList.add('review-user-wrong'); // Existing class for background
+                // If user was wrong, their selection gets the wrong icon.
+                // If it was also the correct answer (which is impossible if wrong),
+                // the correctIconSVG would have taken precedence or caused conflict.
+                // So, this is fine.
+                setOptionIcon(optionElement, wrongIconSVG, 'icon-color-danger');
             }
+            // If userAnswer IS the correct answer, the correctIconSVG is already set by the block above.
         }
+
         optionsElement.appendChild(optionElement);
     });
 
