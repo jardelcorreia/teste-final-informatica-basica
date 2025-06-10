@@ -1,0 +1,466 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --dark-color: #2b2d42;
+    --light-color: #f8f9fa;
+    --success-color: #4cc9f0;
+    --danger-color: #f72585;
+    --border-radius: 10px; /* Slightly sharper */
+    --box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Softer general shadow */
+    --transition: all 0.25s ease-in-out; /* Slightly faster transition */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px; /* More padding vertically, less horizontally by default */
+    color: var(--dark-color);
+    line-height: 1.65; /* Slightly more line height */
+}
+
+.quiz-container {
+    width: 100%;
+    max-width: 760px; /* Slightly more compact */
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto; /* Ensures centering if body padding is removed */
+}
+
+.quiz-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Angled gradient */
+    color: white;
+    padding: 35px 25px; /* Increased padding */
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator */
+}
+
+h1 {
+    font-size: 2.1rem; /* Slightly larger */
+    margin-bottom: 12px; /* More spacing */
+    font-weight: 700;
+}
+
+.quiz-progress {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: white;
+    width: 0%;
+    transition: var(--transition);
+}
+
+.quiz-body {
+    padding: 35px; /* Increased padding */
+}
+
+.question {
+    font-size: 1.35rem; /* Slightly larger */
+    margin-bottom: 30px; /* More spacing */
+    font-weight: 600;
+    color: var(--dark-color);
+    line-height: 1.5; /* Improved readability */
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px; /* Slightly increased gap */
+    margin-bottom: 35px; /* More spacing */
+}
+
+.option {
+    padding: 16px 22px; /* Adjusted padding */
+    background-color: var(--light-color);
+    border: 1px solid #dee2e6; /* Softer border */
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    text-align: left;
+}
+
+.option:hover {
+    background-color: #e9ecef;
+    transform: translateY(-3px); /* More pronounced hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow on hover */
+}
+
+.option.selected {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.option.correct {
+    background-color: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+}
+
+.option.wrong {
+    background-color: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+
+.quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 35px; /* Increased padding */
+    background-color: #f8f9fa;
+    border-top: 1px solid #e0e0e0; /* Softer border */
+}
+
+.question-counter {
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 0.95rem;
+}
+
+.btn {
+    padding: 12px 28px; /* Adjusted padding */
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for all buttons */
+}
+
+.btn-next {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-next:hover:not(:disabled) {
+    background-color: var(--secondary-color); /* Darken on hover */
+    transform: translateY(-3px); /* More pronounced hover */
+    box-shadow: 0 4px 10px rgba(43, 57, 209, 0.2); /* Shadow matching button color */
+}
+
+.btn-next:disabled {
+    background-color: #cccccc; /* Lighter grey for disabled */
+    color: #888888;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none; /* No shadow for disabled */
+}
+
+.result-container {
+    padding: 40px 35px; /* Adjusted padding */
+    text-align: center;
+    display: none;
+}
+
+.result-title {
+    font-size: 2.2rem; /* Slightly larger */
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.result-score {
+    font-size: 3.5rem; /* More prominent */
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 25px; /* More spacing */
+}
+
+.result-message {
+    font-size: 1.25rem; /* Slightly larger */
+    line-height: 1.6;
+    margin-bottom: 35px; /* More spacing */
+}
+
+.btn-restart {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 35px; /* Adjusted padding */
+    font-size: 1.1rem;
+}
+
+.btn-restart:hover {
+    background-color: var(--secondary-color); /* Darken on hover */
+    transform: translateY(-3px); /* More pronounced hover */
+    box-shadow: 0 4px 10px rgba(43, 57, 209, 0.2); /* Shadow matching button color */
+}
+
+@media (max-width: 768px) {
+    .quiz-container {
+        max-width: 100%;
+        margin: 10px auto; /* Reduced margin for smaller screens */
+    }
+    body {
+        padding: 15px 10px; /* Reduce body padding on small screens */
+    }
+    .quiz-header {
+        padding: 25px 20px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .quiz-body {
+        padding: 25px; /* Adjusted padding */
+    }
+    .question {
+        font-size: 1.15rem; /* Adjusted font size */
+        margin-bottom: 20px;
+    }
+    .options {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+    .option {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+    .quiz-footer {
+        padding: 20px 25px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    .result-container {
+        padding: 30px 25px;
+    }
+    .result-title {
+        font-size: 1.9rem;
+    }
+    .result-score {
+        font-size: 2.8rem;
+    }
+    .result-message {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    .btn-restart {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    .detailed-results {
+        margin-top: 25px; /* Adjusted margin */
+    }
+    .detailed-results h3 {
+        font-size: 1.25rem; /* Adjusted font size */
+        margin-bottom: 12px;
+    }
+    .result-item {
+        padding: 12px; /* Adjusted padding */
+        margin-bottom: 12px; /* Adjusted margin */
+    }
+    .result-item p {
+        font-size: 0.9rem; /* Adjusted font size */
+        margin-bottom: 6px;
+        line-height: 1.5;
+    }
+    .result-item .question-text {
+        font-size: 0.95rem; /* Adjusted font size */
+        margin-bottom: 8px;
+    }
+    .high-score-display {
+        font-size: 0.8rem;
+        margin-top: 8px;
+        padding: 4px 8px;
+    }
+}
+
+/* Styles for detailed-results */
+
+.detailed-results {
+    margin-top: 35px; /* Increased margin */
+    text-align: left;
+}
+
+.detailed-results h3 {
+    margin-bottom: 18px; /* Increased margin */
+    color: var(--primary-color);
+    font-size: 1.5rem; /* Slightly larger */
+    font-weight: 600;
+    border-bottom: 1px solid #eee; /* Separator */
+    padding-bottom: 10px; /* Spacing for separator */
+}
+
+.result-item {
+    background-color: var(--light-color);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    padding: 18px; /* Increased padding */
+    margin-bottom: 18px; /* Increased margin */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04); /* Softer shadow */
+    transition: var(--transition);
+}
+.result-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+.result-item p {
+    margin-bottom: 10px; /* Adjusted spacing */
+    font-size: 1rem;
+    line-height: 1.6; /* Improved readability */
+}
+.result-item p:last-child {
+    margin-bottom: 0;
+}
+
+.result-item .user-answer span,
+.result-item .correct-answer span {
+    font-weight: 600; /* Bolder for the actual answer part */
+}
+
+.result-item .user-answer.correct span {
+    color: var(--success-color);
+}
+
+.result-item .user-answer.wrong span {
+    color: var(--danger-color);
+}
+
+.result-item .correct-answer span {
+    color: var(--dark-color); /* Changed to dark for better standing out than accent */
+}
+
+.result-item .question-text {
+     font-weight: 600;
+     margin-bottom: 12px; /* Adjusted spacing */
+     color: var(--secondary-color);
+     font-size: 1.05rem; /* Slightly larger */
+}
+
+.high-score-display {
+    color: white;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: rgba(0,0,0,0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Add these styles to style.css */
+
+.btn-review {
+    background-color: var(--accent-color); /* Or another distinct color */
+    color: white;
+    margin-left: 10px; /* Adjust as needed */
+}
+
+.btn-review:hover {
+    background-color: var(--secondary-color); /* Darken accent or use secondary */
+    transform: translateY(-3px); /* Consistent hover effect */
+    box-shadow: 0 4px 10px rgba(var(--accent-color), 0.25); /* Shadow matching button color */
+}
+
+.review-nav {
+    display: flex; /* Will be set to flex by JS when shown */
+    gap: 10px;
+}
+
+.btn-prev-review, .btn-next-review, .btn-exit-review {
+     background-color: var(--primary-color);
+     color: white;
+}
+
+.btn-prev-review:hover, .btn-next-review:hover, .btn-exit-review:hover {
+     background-color: var(--secondary-color);
+     transform: translateY(-3px); /* Consistent hover effect */
+     box-shadow: 0 4px 10px rgba(var(--primary-color), 0.2);
+}
+
+/* Styles for options during review */
+.option.review-user-selected {
+    border: 3px solid var(--dark-color) !important; /* Highlight user's actual selection */
+    /* Add a special background or icon if they were wrong */
+}
+.option.review-user-wrong {
+     background-color: var(--danger-color) !important; /* Persist wrong choice color */
+     color: white !important;
+     border-color: var(--danger-color) !important;
+}
+ .option.review-correct {
+     background-color: var(--success-color) !important; /* Persist correct choice color */
+     color: white !important;
+     border-color: var(--success-color) !important;
+ }
+
+/* Ensure options are not clickable during review */
+.review-mode .option {
+    cursor: default;
+}
+.review-mode .option:hover {
+    /* Keep original background or a neutral one, no transform or shadow */
+    background-color: var(--light-color);
+    border-color: #dee2e6; /* Reset border color from other states if needed */
+    transform: none;
+    box-shadow: none;
+}
+/* If .selected was applied from quiz mode, neutralize it in review */
+.review-mode .option.selected {
+     background-color: var(--light-color);
+     color: var(--dark-color);
+     border-color: #dee2e6; /* Default border */
+}
+
+/* Specificity: if an option was user's selected AND correct, ensure correct style wins over generic selected */
+.review-mode .option.review-user-selected.review-correct {
+    background-color: var(--success-color) !important;
+    color: white !important;
+    border: 3px solid var(--dark-color) !important; /* Keep user selected border */
+}
+
+/* Specificity: if an option was user's selected (and wrong), ensure wrong style wins */
+.review-mode .option.review-user-selected.review-user-wrong {
+    background-color: var(--danger-color) !important;
+    color: white !important;
+    border: 3px solid var(--dark-color) !important; /* Keep user selected border */
+}
+
+/* Adjust review buttons within media query if needed */
+@media (max-width: 768px) {
+    .btn-review {
+        margin-left: 0;
+        margin-top: 10px; /* Stack review button on small screens */
+        display: block; /* Make it full width or block */
+        width: 100%;
+    }
+    .review-nav {
+        flex-direction: column; /* Stack review nav buttons */
+        width: 100%;
+    }
+    .review-nav .btn {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .review-nav .btn:last-child {
+        margin-bottom: 0;
+    }
+    /* Ensure high-score display is also adjusted in the same media query if it wasn't caught above */
+    .high-score-display { /* This is a duplication if the above worked, but ensures it's present */
+        font-size: 0.8rem;
+        margin-top: 8px;
+        padding: 4px 8px;
+    }
+}
