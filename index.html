@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Informática Básica</title>
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --dark-color: #2b2d42;
+            --light-color: #f8f9fa;
+            --success-color: #4cc9f0;
+            --danger-color: #f72585;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .quiz-container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .quiz-header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .quiz-progress {
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.3);
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: white;
+            width: 0%;
+            transition: var(--transition);
+        }
+        
+        .quiz-body {
+            padding: 30px;
+        }
+        
+        .question {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .option {
+            padding: 15px 20px;
+            background-color: var(--light-color);
+            border: 2px solid #e9ecef;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            text-align: left;
+        }
+        
+        .option:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        .option.selected {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        
+        .option.correct {
+            background-color: var(--success-color);
+            color: white;
+            border-color: var(--success-color);
+        }
+        
+        .option.wrong {
+            background-color: var(--danger-color);
+            color: white;
+            border-color: var(--danger-color);
+        }
+        
+        .quiz-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .question-counter {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-next {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-next:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-next:disabled {
+            background-color: #adb5bd;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .result-container {
+            padding: 40px;
+            text-align: center;
+            display: none;
+        }
+        
+        .result-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .result-score {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .result-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-restart {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+        
+        .btn-restart:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .quiz-container {
+                max-width: 100%;
+            }
+            
+            .quiz-body {
+                padding: 20px;
+            }
+            
+            .question {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>Quiz de Informática Básica</h1>
+            <div class="quiz-progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+        
+        <div id="quiz">
+            <div class="quiz-body">
+                <div class="question" id="question"></div>
+                <div class="options" id="options"></div>
+            </div>
+            
+            <div class="quiz-footer">
+                <div class="question-counter" id="question-counter"></div>
+                <button class="btn btn-next" id="next-btn" disabled>Próxima Pergunta</button>
+            </div>
+        </div>
+        
+        <div class="result-container" id="result-container">
+            <h2 class="result-title">Quiz Concluído!</h2>
+            <div class="result-score" id="result-score"></div>
+            <p class="result-message" id="result-message"></p>
+            <button class="btn btn-restart" id="restart-btn">Refazer Quiz</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Qual componente é considerado o 'cérebro' do computador?",
+                options: ["Placa de vídeo", "Processador (CPU)", "Memória RAM", "Disco rígido (HD)"],
+                answer: 1
+            },
+            {
+                question: "Qual programa é usado para criar planilhas?",
+                options: ["Word", "PowerPoint", "Excel", "Photoshop"],
+                answer: 2
+            },
+            {
+                question: "O que significa a sigla 'PDF'?",
+                options: ["Portable Document Format", "Personal Data File", "Printable Document Form", "Public Digital File"],
+                answer: 0
+            },
+            {
+                question: "Qual sistema operacional é desenvolvido pela Microsoft?",
+                options: ["macOS", "Linux", "Windows", "Android"],
+                answer: 2
+            },
+            {
+                question: "O que é um 'browser'?",
+                options: ["Um programa para editar textos", "Um navegador de internet", "Um antivírus", "Um sistema operacional"],
+                answer: 1
+            },
+            {
+                question: "Qual tecla de atalho é usada para copiar um texto?",
+                options: ["Ctrl + X", "Ctrl + C", "Ctrl + V", "Ctrl + Z"],
+                answer: 1
+            },
+            {
+                question: "Qual desses NÃO é um dispositivo de armazenamento?",
+                options: ["Pen Drive", "SSD", "Monitor", "HD Externo"],
+                answer: 2
+            },
+            {
+                question: "O que é um 'email'?",
+                options: ["Um tipo de rede social", "Uma mensagem eletrônica", "Um programa de edição de vídeo", "Um sistema operacional"],
+                answer: 1
+            },
+            {
+                question: "Qual desses é um exemplo de sistema operacional livre (open source)?",
+                options: ["Windows 10", "macOS", "Linux", "iOS"],
+                answer: 2
+            },
+            {
+                question: "O que é 'Wi-Fi'?",
+                options: ["Um tipo de cabo de internet", "Uma tecnologia de rede sem fio", "Um navegador de internet", "Um sistema de armazenamento"],
+                answer: 1
+            },
+            {
+                question: "Qual programa é usado para criar apresentações?",
+                options: ["Word", "Excel", "PowerPoint", "Notepad"],
+                answer: 2
+            },
+            {
+                question: "O que significa 'HTTP'?",
+                options: ["HyperText Transfer Protocol", "High Tech Text Processor", "Home Tool Transfer Program", "Hyper Transfer Text Protocol"],
+                answer: 0
+            },
+            {
+                question: "Qual tecla é usada para dar espaço entre palavras?",
+                options: ["Enter", "Shift", "Tab", "Barra de Espaço"],
+                answer: 3
+            },
+            {
+                question: "O que é um 'vírus de computador'?",
+                options: ["Um programa útil", "Um hardware especial", "Um software malicioso", "Um tipo de navegador"],
+                answer: 2
+            },
+            {
+                question: "Qual desses NÃO é um serviço de e-mail?",
+                options: ["Gmail", "Outlook", "WhatsApp", "Yahoo Mail"],
+                answer: 2
+            },
+            {
+                question: "O que o ícone da 'lixeira' representa?",
+                options: ["Local de arquivos excluídos", "Pasta de documentos", "Disco rígido", "Área de trabalho"],
+                answer: 0
+            },
+            {
+                question: "Qual comando desfaz a última ação no computador?",
+                options: ["Ctrl + Y", "Ctrl + Z", "Ctrl + X", "Ctrl + C"],
+                answer: 1
+            },
+            {
+                question: "O que é um 'backup'?",
+                options: ["Um tipo de vírus", "Uma cópia de segurança de dados", "Um programa de edição de texto", "Um navegador de internet"],
+                answer: 1
+            },
+            {
+                question: "Qual desses é um componente de hardware?",
+                options: ["Windows", "Google Chrome", "Memória RAM", "Word"],
+                answer: 2
+            },
+            {
+                question: "O que significa 'URL'?",
+                options: ["Universal Resource Locator", "Uniform Resource Locator", "Unique Resource Locator", "United Resource Locator"],
+                answer: 1
+            }
+        ];
+
+        // Elementos do DOM
+        const quizElement = document.getElementById('quiz');
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const nextButton = document.getElementById('next-btn');
+        const questionCounterElement = document.getElementById('question-counter');
+        const progressBarElement = document.getElementById('progress-bar');
+        const resultContainerElement = document.getElementById('result-container');
+        const resultScoreElement = document.getElementById('result-score');
+        const resultMessageElement = document.getElementById('result-message');
+        const restartButton = document.getElementById('restart-btn');
+
+        // Variáveis do quiz
+        let currentQuestion = 0;
+        let score = 0;
+        let selectedOption = null;
+        let quizCompleted = false;
+
+        // Carregar questão
+        function loadQuestion() {
+            const question = questions[currentQuestion];
+            questionElement.textContent = question.question;
+            optionsElement.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.classList.add('option');
+                optionElement.textContent = option;
+                optionElement.dataset.index = index;
+                optionElement.addEventListener('click', selectOption);
+                optionsElement.appendChild(optionElement);
+            });
+            
+            updateProgress();
+            nextButton.disabled = true;
+            selectedOption = null;
+        }
+
+        // Selecionar opção
+        function selectOption(e) {
+            if (quizCompleted) return;
+            
+            const selectedElement = e.target;
+            const optionIndex = parseInt(selectedElement.dataset.index);
+            
+            // Remover seleção anterior
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Marcar opção selecionada
+            selectedElement.classList.add('selected');
+            selectedOption = optionIndex;
+            nextButton.disabled = false;
+        }
+
+        // Verificar resposta
+        function checkAnswer() {
+            const question = questions[currentQuestion];
+            const options = document.querySelectorAll('.option');
+            
+            options.forEach((option, index) => {
+                option.classList.remove('correct', 'wrong');
+                if (index === question.answer) {
+                    option.classList.add('correct');
+                } else if (index === selectedOption && index !== question.answer) {
+                    option.classList.add('wrong');
+                }
+            });
+            
+            if (selectedOption === question.answer) {
+                score++;
+            }
+            
+            nextButton.textContent = currentQuestion < questions.length - 1 ? 'Próxima Pergunta' : 'Ver Resultado';
+        }
+
+        // Próxima questão ou mostrar resultado
+        function nextQuestion() {
+            if (selectedOption === null) return;
+            
+            checkAnswer();
+            
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        // Atualizar progresso
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            progressBarElement.style.width = `${progress}%`;
+            questionCounterElement.textContent = `Pergunta ${currentQuestion + 1} de ${questions.length}`;
+        }
+
+        // Mostrar resultado
+        function showResult() {
+            quizElement.style.display = 'none';
+            resultContainerElement.style.display = 'block';
+            resultScoreElement.textContent = `${score}/${questions.length}`;
+            
+            const percentage = (score / questions.length) * 100;
+            let message = '';
+            
+            if (percentage >= 80) {
+                message = 'Excelente! Você domina os conceitos de informática básica!';
+            } else if (percentage >= 60) {
+                message = 'Muito bom! Você tem um bom conhecimento de informática!';
+            } else if (percentage >= 40) {
+                message = 'Bom! Com um pouco mais de estudo você melhora ainda mais!';
+            } else {
+                message = 'Continue estudando! A prática leva à perfeição!';
+            }
+            
+            resultMessageElement.textContent = message;
+            quizCompleted = true;
+        }
+
+        // Reiniciar quiz
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            quizCompleted = false;
+            quizElement.style.display = 'block';
+            resultContainerElement.style.display = 'none';
+            loadQuestion();
+        }
+
+        // Event listeners
+        nextButton.addEventListener('click', nextQuestion);
+        restartButton.addEventListener('click', restartQuiz);
+
+        // Iniciar quiz
+        loadQuestion();
+    </script>
+</body>
+</html>
