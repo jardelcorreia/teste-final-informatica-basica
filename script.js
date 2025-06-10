@@ -118,6 +118,186 @@ const questions = [
         options: ["Universal Resource Locator", "Uniform Resource Locator", "Unique Resource Locator", "United Resource Locator"],
         answer: 1,
         userAnswer: null
+    },
+    {
+        question: "Qual componente é o 'cérebro' do PC? (Alt)",
+        options: ["Placa de vídeo (Alt)", "Processador CPU (Alt)", "Memória RAM (Alt)", "Disco rígido HD (Alt)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual programa é para planilhas? (Alt)",
+        options: ["Editor de Texto (Alt)", "Software de Apresentação (Alt)", "Editor de Planilhas (Alt)", "Editor de Imagem (Alt)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "Significado de PDF (Alt)",
+        options: ["Formato de Documento Portátil (Alt)", "Arquivo de Dados Pessoais (Alt)", "Formulário de Documento Imprimível (Alt)", "Arquivo Digital Público (Alt)"],
+        answer: 0,
+        userAnswer: null
+    },
+    {
+        question: "SO da Microsoft (Alt)",
+        options: ["macOS (Alt)", "Linux (Alt)", "Windows (Alt)", "Android (Alt)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "Definição de 'browser' (Alt)",
+        options: ["Editor de textos (Alt)", "Navegador web (Alt)", "Antivírus (Alt)", "Sistema Operacional (Alt)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Atalho para copiar (Alt)",
+        options: ["Ctrl + X (Alt)", "Ctrl + C (Alt)", "Ctrl + V (Alt)", "Ctrl + Z (Alt)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual NÃO é armazenamento? (Alt)",
+        options: ["Pen Drive (Alt)", "SSD (Alt)", "Monitor (Alt)", "HD Externo (Alt)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "Definição de 'email' (Alt)",
+        options: ["Rede social (Alt)", "Mensagem eletrônica (Alt)", "Editor de vídeo (Alt)", "SO (Alt)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "SO livre (open source)? (Alt)",
+        options: ["Windows (Alt)", "macOS (Alt)", "Linux (Alt)", "iOS (Alt)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "Definição de 'Wi-Fi' (Alt)",
+        options: ["Cabo de internet (Alt)", "Rede sem fio (Alt)", "Navegador (Alt)", "Armazenamento (Alt)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual componente é o 'cérebro' do computador? (Rev)",
+        options: ["GPU (Rev)", "CPU (Rev)", "RAM (Rev)", "HDD (Rev)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual programa é usado para criar planilhas? (Rev)",
+        options: ["Processador de Texto (Rev)", "Slides (Rev)", "Software de Planilha (Rev)", "Editor Gráfico (Rev)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "O que significa a sigla 'PDF'? (Rev)",
+        options: ["Portable Document Format (Rev)", "Personal Data File (Rev)", "Printable Document Form (Rev)", "Public Digital File (Rev)"],
+        answer: 0,
+        userAnswer: null
+    },
+    {
+        question: "Qual sistema operacional é desenvolvido pela Microsoft? (Rev)",
+        options: ["Apple macOS (Rev)", "Distribuição Linux (Rev)", "Microsoft Windows (Rev)", "Google Android (Rev)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "O que é um 'browser'? (Rev)",
+        options: ["Criador de Documentos (Rev)", "Visualizador da Web (Rev)", "Protetor de Vírus (Rev)", "Interface do Usuário (Rev)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual tecla de atalho é usada para copiar um texto? (Rev)",
+        options: ["Recortar (Rev)", "Copiar (Rev)", "Colar (Rev)", "Desfazer (Rev)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual desses NÃO é um dispositivo de armazenamento? (Rev)",
+        options: ["Unidade Flash (Rev)", "Unidade de Estado Sólido (Rev)", "Tela (Rev)", "Disco Portátil (Rev)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "O que é um 'email'? (Rev)",
+        options: ["Plataforma Social (Rev)", "Correspondência Digital (Rev)", "Software de Edição (Rev)", "Ambiente Operacional (Rev)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual desses é um exemplo de sistema operacional livre (open source)? (Rev)",
+        options: ["Windows OS (Rev)", "Mac OS (Rev)", "Linux Kernel (Rev)", "iOS Mobile (Rev)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "O que é 'Wi-Fi'? (Rev)",
+        options: ["Conexão por Fio (Rev)", "Tecnologia Wireless (Rev)", "Aplicativo de Navegação (Rev)", "Dispositivo de Backup (Rev)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual componente é o 'cérebro' do computador? (V3)",
+        options: ["Vídeo Card (V3)", "Processador Central (V3)", "Memória de Acesso Aleatório (V3)", "Drive de Disco Rígido (V3)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual programa é para criar planilhas? (V3)",
+        options: ["MS Word (V3)", "MS PowerPoint (V3)", "MS Excel (V3)", "Adobe Photoshop (V3)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "Significado de PDF (V3)",
+        options: ["Formato Portátil de Documento (V3)", "Ficheiro Pessoal de Dados (V3)", "Formulário Imprimível de Documento (V3)", "Ficheiro Público Digital (V3)"],
+        answer: 0,
+        userAnswer: null
+    },
+    {
+        question: "SO da Microsoft (V3)",
+        options: ["macOS (V3)", "Ubuntu (V3)", "Windows (V3)", "Android (V3)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "Definição de 'browser' (V3)",
+        options: ["App de Texto (V3)", "Navegador de Internet (V3)", "Software Antivírus (V3)", "Gerenciador de Sistema (V3)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Atalho para copiar (V3)",
+        options: ["Control+X (V3)", "Control+C (V3)", "Control+V (V3)", "Control+Z (V3)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "Qual NÃO é armazenamento? (V3)",
+        options: ["Flash Drive (V3)", "Solid State Drive (V3)", "Display (V3)", "External Drive (V3)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "Definição de 'email' (V3)",
+        options: ["App de Mídia Social (V3)", "Mensageria Eletrônica (V3)", "App de Edição de Vídeo (V3)", "Plataforma de Sistema (V3)"],
+        answer: 1,
+        userAnswer: null
+    },
+    {
+        question: "SO livre (open source)? (V3)",
+        options: ["Windows 11 (V3)", "macOS Ventura (V3)", "Linux Mint (V3)", "iOS 16 (V3)"],
+        answer: 2,
+        userAnswer: null
+    },
+    {
+        question: "Definição de 'Wi-Fi' (V3)",
+        options: ["Cabo Ethernet (V3)", "Comunicação Sem Fio (V3)", "Cliente Web (V3)", "Unidade de Armazenamento (V3)"],
+        answer: 1,
+        userAnswer: null
     }
 ];
 
@@ -149,6 +329,9 @@ const highScoreDisplayElement = document.getElementById('high-score-display');
 
 const HIGH_SCORE_KEY = 'quizHighScore';
 
+let activeQuizQuestions = [];
+const QUESTIONS_PER_SESSION = 20; // Define how many questions per quiz
+
 // Function to get high score from local storage
 function getHighScore() {
     return parseInt(localStorage.getItem(HIGH_SCORE_KEY)) || 0;
@@ -162,7 +345,7 @@ function setHighScore(newScore) {
 // Function to update high score display
 function updateHighScoreDisplay() {
     const highScore = getHighScore();
-    highScoreDisplayElement.textContent = `HighScore: ${highScore}/${questions.length}`;
+    highScoreDisplayElement.textContent = `HighScore: ${highScore}/${QUESTIONS_PER_SESSION}`; // Use QUESTIONS_PER_SESSION
 }
 
 // Variáveis do quiz
@@ -172,6 +355,48 @@ let currentQuestion = 0;
 let score = 0;
 let selectedOption = null;
 let quizCompleted = false;
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // ES6 swap
+    }
+}
+
+function setupNewQuizSession() {
+    // Shuffle a copy of the main questions bank to avoid altering the original order permanently
+    // if ever needed, or shuffle original if order persistence isn't a concern.
+    // For simplicity, let's shuffle the main 'questions' array directly.
+    // If 'questions' should remain pristine, make a copy first:
+    // const shuffledBank = [...questions];
+    // shuffleArray(shuffledBank);
+    // activeQuizQuestions = shuffledBank.slice(0, QUESTIONS_PER_SESSION);
+
+    shuffleArray(questions); // Shuffles the main bank in place
+    activeQuizQuestions = questions.slice(0, QUESTIONS_PER_SESSION);
+
+    currentQuestion = 0;
+    score = 0;
+    quizCompleted = false; // Ensure quiz is not marked completed globally at start
+    selectedOption = null;
+
+    // Reset userAnswer for the active quiz questions
+    activeQuizQuestions.forEach(q => {
+        q.userAnswer = null;
+    });
+
+    // Any other UI resets needed at the very start of a new session
+    if (progressBarElement) progressBarElement.style.width = '0%';
+    if (nextButton) {
+        nextButton.textContent = 'Próxima Pergunta';
+        nextButton.disabled = true;
+    }
+    if (resultContainerElement) resultContainerElement.style.display = 'none';
+    if (quizElement) quizElement.style.display = 'block'; // Ensure quiz area is visible
+    if (reviewNavElement) reviewNavElement.style.display = 'none';
+    if (reviewButton) reviewButton.style.display = 'none';
+    if (detailedResultsElement) detailedResultsElement.innerHTML = '<h3>Resumo Detalhado:</h3>';
+}
 
 function setOptionIcon(optionElement, iconSVG = '', iconColorClass = '') {
     const iconContainer = optionElement.querySelector('.feedback-icon-container');
@@ -197,7 +422,7 @@ function loadQuestion() {
     clearAllOptionIcons(); // Clear icons from previous question
     quizCompleted = false; // Reset for the new question
 
-    const questionData = questions[currentQuestion];
+    const questionData = activeQuizQuestions[currentQuestion]; // Use activeQuizQuestions
     questionElement.textContent = questionData.question;
     optionsElement.innerHTML = '';
 
@@ -249,13 +474,13 @@ function selectOption(e) {
     setOptionIcon(selectedElement, selectedIconSVG, 'icon-color-primary'); // Show selected icon with primary color
 
     selectedOption = optionIndex;
-    questions[currentQuestion].userAnswer = optionIndex;
+    activeQuizQuestions[currentQuestion].userAnswer = optionIndex; // Use activeQuizQuestions
     nextButton.disabled = false;
 }
 
 // Verificar resposta
 function checkAnswer() {
-    const question = questions[currentQuestion];
+    const question = activeQuizQuestions[currentQuestion]; // Use activeQuizQuestions
     const allOptionElements = document.querySelectorAll('.option'); // Get all option elements
     // const selectedOptionElement = allOptionElements[selectedOption]; // User's chosen option element - Not strictly needed with current logic
     // const correctOptionElement = allOptionElements[question.answer]; // Actual correct option element - Not strictly needed
@@ -292,7 +517,7 @@ function checkAnswer() {
         score++;
     }
 
-    nextButton.textContent = currentQuestion < questions.length - 1 ? 'Próxima Pergunta' : 'Ver Resultado';
+    nextButton.textContent = currentQuestion < QUESTIONS_PER_SESSION - 1 ? 'Próxima Pergunta' : 'Ver Resultado'; // Use QUESTIONS_PER_SESSION
 }
 
 // Próxima questão ou mostrar resultado
@@ -301,7 +526,7 @@ function nextQuestion() {
 
     checkAnswer();
 
-    if (currentQuestion < questions.length - 1) {
+    if (currentQuestion < QUESTIONS_PER_SESSION - 1) { // Use QUESTIONS_PER_SESSION
         currentQuestion++;
         loadQuestion();
     } else {
@@ -311,18 +536,18 @@ function nextQuestion() {
 
 // Atualizar progresso
 function updateProgress() {
-    const progress = ((currentQuestion + 1) / questions.length) * 100;
+    const progress = ((currentQuestion + 1) / QUESTIONS_PER_SESSION) * 100; // Use QUESTIONS_PER_SESSION
     progressBarElement.style.width = `${progress}%`;
-    questionCounterElement.textContent = `Pergunta ${currentQuestion + 1} de ${questions.length}`;
+    questionCounterElement.textContent = `Pergunta ${currentQuestion + 1} de ${QUESTIONS_PER_SESSION}`; // Use QUESTIONS_PER_SESSION
 }
 
 // Mostrar resultado
 function showResult() {
     quizElement.style.display = 'none';
     resultContainerElement.style.display = 'block';
-    resultScoreElement.textContent = `${score}/${questions.length}`;
+    resultScoreElement.textContent = `${score}/${QUESTIONS_PER_SESSION}`; // Use QUESTIONS_PER_SESSION
 
-    const percentage = (score / questions.length) * 100;
+    const percentage = (score / QUESTIONS_PER_SESSION) * 100; // Use QUESTIONS_PER_SESSION
     let message = '';
 
     if (percentage >= 80) {
@@ -349,7 +574,7 @@ function showResult() {
     }
 
     detailedResultsElement.innerHTML = '<h3>Resumo Detalhado:</h3>';
-    questions.forEach((q, index) => {
+    activeQuizQuestions.forEach((q, index) => { // Use activeQuizQuestions
         const resultItem = document.createElement('div');
         resultItem.classList.add('result-item');
 
@@ -380,22 +605,13 @@ function showResult() {
 
 // Reiniciar quiz
 function restartQuiz() {
-    currentQuestion = 0;
-    score = 0;
-    quizCompleted = false;
-    // Reset userAnswer for all questions
-    questions.forEach(q => q.userAnswer = null); // Add this line
-    quizElement.style.display = 'block';
-    resultContainerElement.style.display = 'none';
-    detailedResultsElement.innerHTML = '<h3>Resumo Detalhado:</h3>'; // Clear detailed results
-
-    reviewButton.style.display = 'none'; // Hide review button on restart
-    if (isInReviewMode) { // Ensure review mode specific UI is reset
+    if (isInReviewMode) { // Check if in review mode before calling exitReviewMode
         exitReviewMode();
     }
+    setupNewQuizSession(); // Setup a new randomized set of 20 questions and reset states
+    loadQuestion();        // Load the first question of the new session
 
-    loadQuestion();
-    nextButton.textContent = 'Próxima Pergunta'; // Reset button text
+    // updateHighScoreDisplay(); // Not strictly needed here as it doesn't change on restart, only on load or new high score
 }
 
 function enterReviewMode() {
@@ -436,7 +652,7 @@ function loadReviewQuestion() {
     quizContainerElement.classList.add('review-mode'); // Ensure review mode class is on
     // clearAllOptionIcons(); // Optional: Clear all icons upfront if needed, though setOptionIcon below will overwrite
 
-    const questionData = questions[currentReviewQuestionIndex];
+    const questionData = activeQuizQuestions[currentReviewQuestionIndex]; // Use activeQuizQuestions
     questionElement.textContent = questionData.question;
     optionsElement.innerHTML = ''; // Clear previous options
 
@@ -483,9 +699,9 @@ function loadReviewQuestion() {
         optionsElement.appendChild(optionElement);
     });
 
-    questionCounterElement.textContent = `Revisando Pergunta ${currentReviewQuestionIndex + 1} de ${questions.length}`;
+    questionCounterElement.textContent = `Revisando Pergunta ${currentReviewQuestionIndex + 1} de ${QUESTIONS_PER_SESSION}`; // Use QUESTIONS_PER_SESSION
     prevReviewButton.disabled = currentReviewQuestionIndex === 0;
-    nextReviewButton.disabled = currentReviewQuestionIndex === questions.length - 1;
+    nextReviewButton.disabled = currentReviewQuestionIndex === QUESTIONS_PER_SESSION - 1; // Use QUESTIONS_PER_SESSION
 }
 
 // Event listeners
@@ -510,8 +726,10 @@ nextReviewButton.addEventListener('click', () => {
 
 // Initial setup calls
 document.addEventListener('DOMContentLoaded', () => {
-    loadQuestion();
-    reviewButton.style.display = 'none';
-    reviewNavElement.style.display = 'none';
-    updateHighScoreDisplay(); // Load and display high score on initial load
+    setupNewQuizSession(); // Setup the randomized 20 questions
+    loadQuestion();        // Load the first question of the new session
+
+    updateHighScoreDisplay();
+    if (reviewButton) reviewButton.style.display = 'none';
+    if (reviewNavElement) reviewNavElement.style.display = 'none';
 });
