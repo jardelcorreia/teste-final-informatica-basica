@@ -1,14 +1,22 @@
 :root {
-    --primary-color: #4361ee;
-    --secondary-color: #3f37c9;
-    --accent-color: #4895ef;
-    --dark-color: #2b2d42;
-    --light-color: #f8f9fa;
-    --success-color: #4cc9f0;
-    --danger-color: #f72585;
-    --border-radius: 10px; /* Slightly sharper */
-    --box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Softer general shadow */
-    --transition: all 0.25s ease-in-out; /* Slightly faster transition */
+    --primary-color: #3B82F6;    /* Modern Blue */
+    --secondary-color: #1D4ED8;  /* Deeper Blue */
+    --accent-color: #3B82F6;     /* Using Primary for selected option */
+    --dark-color: #1F2937;       /* Cool Dark Gray/Charcoal */
+    --light-color: #F9FAFB;      /* Very Light Gray for option bg */
+    --success-color: #10B981;    /* Emerald Green */
+    --danger-color: #EF4444;     /* Red */
+
+    --border-radius: 10px; /* From previous refinement, keep */
+    --box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Softened shadow, keep */
+    --transition: all 0.3s ease;
+
+    /* New specific variables for easier control if needed */
+    --quiz-header-bg-start: #3B82F6;
+    --quiz-header-bg-end: #2563EB;
+    --button-text-color: #FFFFFF;
+    --option-border-color: #D1D5DB; /* Light gray for option borders */
+    --option-hover-bg-color: #E5E7EB; /* Slightly darker gray for option hover */
 }
 
 * {
@@ -59,8 +67,8 @@ body::before {
 }
 
 .quiz-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Angled gradient */
-    color: white;
+    background: linear-gradient(to right, var(--quiz-header-bg-start), var(--quiz-header-bg-end));
+    color: var(--button-text-color); /* Assuming header text should be light */
     padding: 35px 25px; /* Increased padding */
     text-align: center;
     border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator */
@@ -108,53 +116,40 @@ h1 {
 }
 
 .option {
-    padding: 12px 18px; /* Adjusted padding for potential image */
+    padding: 15px 20px;
     background-color: var(--light-color);
-    border: 1px solid #dee2e6; /* Softer border */
+    border: 1px solid var(--option-border-color);
+    color: var(--dark-color);
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition);
     font-weight: 500;
-    /* text-align: left; /* Flex will handle alignment */
-    display: flex;       /* Added for image + text layout */
-    align-items: center; /* Added for vertical alignment */
-}
-
-/* New styles for .option-image */
-.option-image {
-    max-width: 32px;
-    max-height: 32px;
-    margin-right: 12px; /* Space between image and text */
-    object-fit: contain; /* Good for icons */
-}
-
-/* New styles for .option-text */
-.option-text {
-    flex-grow: 1; /* Allows text to take available space */
+    text-align: left; /* Restored */
 }
 
 .option:hover {
-    background-color: #e9ecef;
-    transform: translateY(-3px); /* More pronounced hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow on hover */
+    background-color: var(--option-hover-bg-color);
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .option.selected {
     background-color: var(--accent-color);
-    color: white;
-    border-color: var(--accent-color);
+    color: var(--button-text-color);
+    border-color: var(--secondary-color); /* Darker border for selected */
 }
 
 .option.correct {
     background-color: var(--success-color);
-    color: white;
-    border-color: var(--success-color);
+    color: var(--button-text-color);
+    border-color: #059669; /* Darker green border */
 }
 
 .option.wrong {
     background-color: var(--danger-color);
-    color: white;
-    border-color: var(--danger-color);
+    color: var(--button-text-color);
+    border-color: #B91C1C; /* Darker red border */
 }
 
 .quiz-footer {
@@ -184,18 +179,18 @@ h1 {
 
 .btn-next {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--button-text-color);
 }
 
 .btn-next:hover:not(:disabled) {
-    background-color: var(--secondary-color); /* Darken on hover */
-    transform: translateY(-3px); /* More pronounced hover */
-    box-shadow: 0 4px 10px rgba(43, 57, 209, 0.2); /* Shadow matching button color */
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(var(--secondary-color), 0.25);
 }
 
 .btn-next:disabled {
-    background-color: #cccccc; /* Lighter grey for disabled */
-    color: #888888;
+    background-color: #9CA3AF; /* A neutral gray */
+    color: #E5E7EB;
     cursor: not-allowed;
     transform: none;
     box-shadow: none; /* No shadow for disabled */
@@ -228,15 +223,15 @@ h1 {
 
 .btn-restart {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--button-text-color);
     padding: 15px 35px; /* Adjusted padding */
     font-size: 1.1rem;
 }
 
 .btn-restart:hover {
-    background-color: var(--secondary-color); /* Darken on hover */
-    transform: translateY(-3px); /* More pronounced hover */
-    box-shadow: 0 4px 10px rgba(43, 57, 209, 0.2); /* Shadow matching button color */
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(var(--secondary-color), 0.25);
 }
 
 @media (max-width: 768px) {
@@ -265,14 +260,10 @@ h1 {
         margin-bottom: 25px;
     }
     .option {
-        padding: 10px 15px; /* Adjust padding for smaller screens with images */
-        font-size: 0.95rem;
+        padding: 15px 20px; /* Restore padding */
+        font-size: 0.95rem; /* Keep font size adjustment for mobile */
     }
-    .option-image {
-        max-width: 28px; /* Slightly smaller images on mobile */
-        max-height: 28px;
-        margin-right: 10px;
-    }
+    /* .option-image styles removed from media query */
     .quiz-footer {
         padding: 20px 25px;
     }
@@ -369,15 +360,15 @@ h1 {
 }
 
 .result-item .user-answer.correct span {
-    color: var(--success-color);
+    color: var(--success-color); /* Text color */
 }
 
 .result-item .user-answer.wrong span {
-    color: var(--danger-color);
+    color: var(--danger-color); /* Text color */
 }
 
 .result-item .correct-answer span {
-    color: var(--dark-color); /* Changed to dark for better standing out than accent */
+    color: var(--dark-color);
 }
 
 .result-item .question-text {
@@ -401,15 +392,15 @@ h1 {
 /* Add these styles to style.css */
 
 .btn-review {
-    background-color: var(--accent-color); /* Or another distinct color */
-    color: white;
+    background-color: var(--primary-color); /* Using primary for consistency */
+    color: var(--button-text-color);
     margin-left: 10px; /* Adjust as needed */
 }
 
 .btn-review:hover {
-    background-color: var(--secondary-color); /* Darken accent or use secondary */
-    transform: translateY(-3px); /* Consistent hover effect */
-    box-shadow: 0 4px 10px rgba(var(--accent-color), 0.25); /* Shadow matching button color */
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(var(--secondary-color), 0.25);
 }
 
 .review-nav {
@@ -419,13 +410,13 @@ h1 {
 
 .btn-prev-review, .btn-next-review, .btn-exit-review {
      background-color: var(--primary-color);
-     color: white;
+     color: var(--button-text-color);
 }
 
 .btn-prev-review:hover, .btn-next-review:hover, .btn-exit-review:hover {
      background-color: var(--secondary-color);
-     transform: translateY(-3px); /* Consistent hover effect */
-     box-shadow: 0 4px 10px rgba(var(--primary-color), 0.2);
+     transform: translateY(-3px);
+     box-shadow: 0 4px 10px rgba(var(--secondary-color), 0.2);
 }
 
 /* Styles for options during review */
@@ -438,18 +429,14 @@ h1 {
      color: white !important;
      border-color: var(--danger-color) !important;
 }
-.option.review-user-wrong .option-image {
-    /* filter: grayscale(80%) opacity(60%); /* Example: make image less prominent if wrong */
-}
+/* Image filter comments removed */
 
  .option.review-correct {
      background-color: var(--success-color) !important;
      color: white !important;
      border-color: var(--success-color) !important;
  }
-.option.review-correct .option-image {
-    /* filter: none; /* Ensure it's normal for correct */
-}
+/* Image filter comments removed */
 
 
 /* Ensure options are not clickable during review */

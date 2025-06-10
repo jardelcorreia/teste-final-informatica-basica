@@ -1,227 +1,121 @@
-// At the top, near 'questions' array definition
-const IMAGE_BASE_PATH = 'images/options/'; // Define if all option images are in a subfolder
-
-// Modify the 'questions' array:
-// Each option string becomes an object: { text: "Option Text", image: "image_name.svg" or null }
-
 const questions = [
     {
         question: "Qual componente é considerado o 'cérebro' do computador?",
-        options: [
-            { text: "Placa de vídeo", image: "gpu_icon.svg" },
-            { text: "Processador (CPU)", image: "cpu_icon.svg" },
-            { text: "Memória RAM", image: "ram_icon.svg" },
-            { text: "Disco rígido (HD)", image: "hdd_icon.svg" }
-        ],
+        options: ["Placa de vídeo", "Processador (CPU)", "Memória RAM", "Disco rígido (HD)"],
         answer: 1,
         userAnswer: null
     },
     {
         question: "Qual programa é usado para criar planilhas?",
-        options: [
-            { text: "Word", image: "document_icon.svg" },
-            { text: "PowerPoint", image: "presentation_icon.svg" },
-            { text: "Excel", image: "spreadsheet_icon.svg" },
-            { text: "Photoshop", image: "image_editor_icon.svg" }
-        ],
+        options: ["Word", "PowerPoint", "Excel", "Photoshop"],
         answer: 2,
         userAnswer: null
     },
     {
         question: "O que significa a sigla 'PDF'?",
-        options: [
-            { text: "Portable Document Format", image: "pdf_icon.svg" },
-            { text: "Personal Data File", image: null },
-            { text: "Printable Document Form", image: null },
-            { text: "Public Digital File", image: null }
-        ],
+        options: ["Portable Document Format", "Personal Data File", "Printable Document Form", "Public Digital File"],
         answer: 0,
         userAnswer: null
     },
     {
         question: "Qual sistema operacional é desenvolvido pela Microsoft?",
-        options: [
-            { text: "macOS", image: "os_mac_icon.svg" },
-            { text: "Linux", image: "os_linux_icon.svg" },
-            { text: "Windows", image: "os_windows_icon.svg" },
-            { text: "Android", image: "os_android_icon.svg" }
-        ],
+        options: ["macOS", "Linux", "Windows", "Android"],
         answer: 2,
         userAnswer: null
     },
     {
         question: "O que é um 'browser'?",
-        options: [
-            { text: "Um programa para editar textos", image: "document_icon.svg" },
-            { text: "Um navegador de internet", image: "browser_icon.svg" },
-            { text: "Um antivírus", image: "virus_icon.svg" }, // Added virus icon for consistency
-            { text: "Um sistema operacional", image: "os_windows_icon.svg" } // Generic OS icon
-        ],
+        options: ["Um programa para editar textos", "Um navegador de internet", "Um antivírus", "Um sistema operacional"],
         answer: 1,
         userAnswer: null
     },
     {
         question: "Qual tecla de atalho é usada para copiar um texto?",
-        options: [
-            { text: "Ctrl + X", image: "cut_icon.svg" },
-            { text: "Ctrl + C", image: "copy_icon.svg" },
-            { text: "Ctrl + V", image: "paste_icon.svg" },
-            { text: "Ctrl + Z", image: "undo_icon.svg" }
-        ],
+        options: ["Ctrl + X", "Ctrl + C", "Ctrl + V", "Ctrl + Z"],
         answer: 1,
         userAnswer: null
     },
     {
         question: "Qual desses NÃO é um dispositivo de armazenamento?",
-        options: [
-            { text: "Pen Drive", image: "pendrive_icon.svg" },
-            { text: "SSD", image: "ssd_icon.svg" },
-            { text: "Monitor", image: "monitor_icon.svg" }, // This is the correct answer and should be visual
-            { text: "HD Externo", image: "external_hdd_icon.svg" }
-        ],
+        options: ["Pen Drive", "SSD", "Monitor", "HD Externo"],
         answer: 2,
         userAnswer: null
     },
     {
         question: "O que é um 'email'?",
-        options: [
-            { text: "Um tipo de rede social", image: "chat_icon.svg" }, // Generic social icon
-            { text: "Uma mensagem eletrônica", image: "email_icon.svg" },
-            { text: "Um programa de edição de vídeo", image: "image_editor_icon.svg" }, // Placeholder
-            { text: "Um sistema operacional", image: "os_windows_icon.svg" } // Placeholder
-        ],
+        options: ["Um tipo de rede social", "Uma mensagem eletrônica", "Um programa de edição de vídeo", "Um sistema operacional"],
         answer: 1,
         userAnswer: null
     },
     {
         question: "Qual desses é um exemplo de sistema operacional livre (open source)?",
-        options: [
-            { text: "Windows 10", image: "os_windows_icon.svg" },
-            { text: "macOS", image: "os_mac_icon.svg" },
-            { text: "Linux", image: "os_linux_icon.svg" },
-            { text: "iOS", image: "os_android_icon.svg" } // Placeholder for mobile OS
-        ],
+        options: ["Windows 10", "macOS", "Linux", "iOS"],
         answer: 2,
         userAnswer: null
     },
     {
         question: "O que é 'Wi-Fi'?",
-        options: [
-            { text: "Um tipo de cabo de internet", image: null }, // Placeholder, maybe a cable icon
-            { text: "Uma tecnologia de rede sem fio", image: "wifi_icon.svg" },
-            { text: "Um navegador de internet", image: "browser_icon.svg" },
-            { text: "Um sistema de armazenamento", image: "hdd_icon.svg" } // Placeholder
-        ],
+        options: ["Um tipo de cabo de internet", "Uma tecnologia de rede sem fio", "Um navegador de internet", "Um sistema de armazenamento"],
         answer: 1,
         userAnswer: null
     },
-        {
+    {
         question: "Qual programa é usado para criar apresentações?",
-        options: [
-            { text: "Word", image: "document_icon.svg" },
-            { text: "Excel", image: "spreadsheet_icon.svg" },
-            { text: "PowerPoint", image: "presentation_icon.svg" },
-            { text: "Notepad", image: null } // Or a simple text file icon
-        ],
+        options: ["Word", "Excel", "PowerPoint", "Notepad"],
         answer: 2,
         userAnswer: null
     },
     {
         question: "O que significa 'HTTP'?",
-        options: [
-            { text: "HyperText Transfer Protocol", image: "http_icon.svg" },
-            { text: "High Tech Text Processor", image: null },
-            { text: "Home Tool Transfer Program", image: null },
-            { text: "Hyper Transfer Text Protocol", image: null }
-        ],
+        options: ["HyperText Transfer Protocol", "High Tech Text Processor", "Home Tool Transfer Program", "Hyper Transfer Text Protocol"],
         answer: 0,
         userAnswer: null
     },
     {
         question: "Qual tecla é usada para dar espaço entre palavras?",
-        options: [
-            { text: "Enter", image: "enter_key_icon.svg" },
-            { text: "Shift", image: "shift_key_icon.svg" },
-            { text: "Tab", image: "tab_key_icon.svg" },
-            { text: "Barra de Espaço", image: "spacebar_icon.svg" }
-        ],
+        options: ["Enter", "Shift", "Tab", "Barra de Espaço"],
         answer: 3,
         userAnswer: null
     },
     {
         question: "O que é um 'vírus de computador'?",
-        options: [
-            { text: "Um programa útil", image: null }, // Maybe a checkmark icon?
-            { text: "Um hardware especial", image: "cpu_icon.svg" }, // Placeholder
-            { text: "Um software malicioso", image: "virus_icon.svg" },
-            { text: "Um tipo de navegador", image: "browser_icon.svg" }
-        ],
+        options: ["Um programa útil", "Um hardware especial", "Um software malicioso", "Um tipo de navegador"],
         answer: 2,
         userAnswer: null
     },
     {
         question: "Qual desses NÃO é um serviço de e-mail?",
-        options: [
-            { text: "Gmail", image: "email_service_icon.svg" },
-            { text: "Outlook", image: "email_service_icon.svg" }, // Reusing generic email
-            { text: "WhatsApp", image: "chat_icon.svg" },
-            { text: "Yahoo Mail", image: "email_service_icon.svg" } // Reusing generic email
-        ],
+        options: ["Gmail", "Outlook", "WhatsApp", "Yahoo Mail"],
         answer: 2,
         userAnswer: null
     },
     {
         question: "O que o ícone da 'lixeira' representa?",
-        options: [
-            { text: "Local de arquivos excluídos", image: "trashcan_icon.svg" },
-            { text: "Pasta de documentos", image: "document_icon.svg" }, // Placeholder
-            { text: "Disco rígido", image: "hdd_icon.svg" },
-            { text: "Área de trabalho", image: "monitor_icon.svg" } // Placeholder
-        ],
+        options: ["Local de arquivos excluídos", "Pasta de documentos", "Disco rígido", "Área de trabalho"],
         answer: 0,
         userAnswer: null
     },
     {
         question: "Qual comando desfaz a última ação no computador?",
-        options: [
-            { text: "Ctrl + Y", image: null }, // Redo icon (opposite of undo)
-            { text: "Ctrl + Z", image: "undo_icon.svg" },
-            { text: "Ctrl + X", image: "cut_icon.svg" },
-            { text: "Ctrl + C", image: "copy_icon.svg" }
-        ],
+        options: ["Ctrl + Y", "Ctrl + Z", "Ctrl + X", "Ctrl + C"],
         answer: 1,
         userAnswer: null
     },
     {
         question: "O que é um 'backup'?",
-        options: [
-            { text: "Um tipo de vírus", image: "virus_icon.svg" },
-            { text: "Uma cópia de segurança de dados", image: "backup_icon.svg" },
-            { text: "Um programa de edição de texto", image: "document_icon.svg" },
-            { text: "Um navegador de internet", image: "browser_icon.svg" }
-        ],
+        options: ["Um tipo de vírus", "Uma cópia de segurança de dados", "Um programa de edição de texto", "Um navegador de internet"],
         answer: 1,
         userAnswer: null
     },
     {
         question: "Qual desses é um componente de hardware?",
-        options: [
-            { text: "Windows", image: "os_windows_icon.svg" },
-            { text: "Google Chrome", image: "browser_icon.svg" }, // Placeholder for Chrome
-            { text: "Memória RAM", image: "ram_icon.svg" },
-            { text: "Word", image: "document_icon.svg" }
-        ],
+        options: ["Windows", "Google Chrome", "Memória RAM", "Word"],
         answer: 2,
         userAnswer: null
     },
     {
         question: "O que significa 'URL'?",
-        options: [
-            { text: "Universal Resource Locator", image: null },
-            { text: "Uniform Resource Locator", image: "url_icon.svg" },
-            { text: "Unique Resource Locator", image: null },
-            { text: "United Resource Locator", image: null }
-        ],
+        options: ["Universal Resource Locator", "Uniform Resource Locator", "Unique Resource Locator", "United Resource Locator"],
         answer: 1,
         userAnswer: null
     }
@@ -277,27 +171,15 @@ let quizCompleted = false;
 
 // Carregar questão
 function loadQuestion() {
-    quizContainerElement.classList.remove('review-mode');
-    const questionData = questions[currentQuestion]; // Renamed for clarity
+    quizContainerElement.classList.remove('review-mode'); // Ensure not in review mode styling
+    const questionData = questions[currentQuestion];
     questionElement.textContent = questionData.question;
     optionsElement.innerHTML = '';
 
-    questionData.options.forEach((optionItem, index) => {
+    questionData.options.forEach((optionString, index) => { // optionItem is now optionString
         const optionElement = document.createElement('div');
         optionElement.classList.add('option');
-
-        if (optionItem.image) {
-            const img = document.createElement('img');
-            img.src = IMAGE_BASE_PATH + optionItem.image;
-            img.alt = optionItem.text; // Alt text for accessibility
-            img.classList.add('option-image');
-            optionElement.appendChild(img);
-        }
-
-        const textSpan = document.createElement('span');
-        textSpan.textContent = optionItem.text;
-        textSpan.classList.add('option-text');
-        optionElement.appendChild(textSpan);
+        optionElement.textContent = optionString; // Directly set text content
 
         optionElement.dataset.index = index;
         optionElement.addEventListener('click', selectOption);
@@ -305,8 +187,8 @@ function loadQuestion() {
     });
 
     updateProgress();
-    nextButton.style.display = 'inline-block'; // Ensure quiz next button is visible
-    reviewNavElement.style.display = 'none'; // Ensure review nav is hidden
+    nextButton.style.display = 'inline-block';
+    reviewNavElement.style.display = 'none';
     nextButton.disabled = true;
     selectedOption = null;
 }
@@ -417,16 +299,16 @@ function showResult() {
 
         const userAnswerTextP = document.createElement('p');
         userAnswerTextP.classList.add('user-answer');
-        // Ensure userAnswer is not null and options array is accessed correctly
-        const userAnswerDisplay = q.userAnswer !== null && q.options[q.userAnswer] ? q.options[q.userAnswer].text : "Não respondida";
+        // q.options[q.userAnswer] will now be a string
+        const userAnswerDisplay = q.userAnswer !== null ? q.options[q.userAnswer] : "Não respondida";
         userAnswerTextP.innerHTML = `Sua resposta: <span class="${q.userAnswer === q.answer ? 'correct' : 'wrong'}">${userAnswerDisplay}</span>`;
         if (q.userAnswer === null) {
             userAnswerTextP.querySelector('span').classList.remove('correct', 'wrong');
         }
 
         const correctAnswerTextP = document.createElement('p');
-        // Ensure answer index is valid and options array is accessed correctly
-        const correctAnswerDisplay = q.options[q.answer] ? q.options[q.answer].text : "N/A";
+        // q.options[q.answer] will now be a string
+        const correctAnswerDisplay = q.options[q.answer];
         correctAnswerTextP.innerHTML = `Resposta correta: <span class="correct-answer">${correctAnswerDisplay}</span>`;
 
         resultItem.appendChild(questionTextP);
@@ -491,26 +373,14 @@ function exitReviewMode() {
 }
 
 function loadReviewQuestion() {
-    const questionData = questions[currentReviewQuestionIndex]; // Renamed for clarity
+    const questionData = questions[currentReviewQuestionIndex];
     questionElement.textContent = questionData.question;
     optionsElement.innerHTML = '';
 
-    questionData.options.forEach((optionItem, index) => {
+    questionData.options.forEach((optionString, index) => { // optionItem is now optionString
         const optionElement = document.createElement('div');
         optionElement.classList.add('option');
-
-        if (optionItem.image) {
-            const img = document.createElement('img');
-            img.src = IMAGE_BASE_PATH + optionItem.image;
-            img.alt = optionItem.text;
-            img.classList.add('option-image');
-            optionElement.appendChild(img);
-        }
-
-        const textSpan = document.createElement('span');
-        textSpan.textContent = optionItem.text;
-        textSpan.classList.add('option-text');
-        optionElement.appendChild(textSpan);
+        optionElement.textContent = optionString; // Directly set text content
 
         if (index === questionData.answer) {
             optionElement.classList.add('review-correct');
