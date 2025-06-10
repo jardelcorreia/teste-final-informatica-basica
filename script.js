@@ -118,186 +118,6 @@ const questions = [
         options: ["Universal Resource Locator", "Uniform Resource Locator", "Unique Resource Locator", "United Resource Locator"],
         answer: 1,
         userAnswer: null
-    },
-    {
-        question: "Qual componente é o 'cérebro' do PC?",
-        options: ["Placa de vídeo", "Processador CPU", "Memória RAM", "Disco rígido HD"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual programa é para planilhas?",
-        options: ["Editor de Texto", "Software de Apresentação", "Editor de Planilhas", "Editor de Imagem"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "Significado de PDF",
-        options: ["Formato de Documento Portátil", "Arquivo de Dados Pessoais", "Formulário de Documento Imprimível", "Arquivo Digital Público"],
-        answer: 0,
-        userAnswer: null
-    },
-    {
-        question: "SO da Microsoft",
-        options: ["macOS", "Linux", "Windows", "Android"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "Definição de 'browser'",
-        options: ["Editor de textos", "Navegador web", "Antivírus", "Sistema Operacional"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Atalho para copiar",
-        options: ["Ctrl + X", "Ctrl + C", "Ctrl + V", "Ctrl + Z"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual NÃO é armazenamento?",
-        options: ["Pen Drive", "SSD", "Monitor", "HD Externo"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "Definição de 'email'",
-        options: ["Rede social", "Mensagem eletrônica", "Editor de vídeo", "SO"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "SO livre (open source)?",
-        options: ["Windows", "macOS", "Linux", "iOS"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "Definição de 'Wi-Fi'",
-        options: ["Cabo de internet", "Rede sem fio", "Navegador", "Armazenamento"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual componente é o 'cérebro' do computador?",
-        options: ["GPU", "CPU", "RAM", "HDD"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual programa é usado para criar planilhas?",
-        options: ["Processador de Texto", "Slides", "Software de Planilha", "Editor Gráfico"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "O que significa a sigla 'PDF'?",
-        options: ["Portable Document Format", "Personal Data File", "Printable Document Form", "Public Digital File"],
-        answer: 0,
-        userAnswer: null
-    },
-    {
-        question: "Qual sistema operacional é desenvolvido pela Microsoft?",
-        options: ["Apple macOS", "Distribuição Linux", "Microsoft Windows", "Google Android"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "O que é um 'browser'?",
-        options: ["Criador de Documentos", "Visualizador da Web", "Protetor de Vírus", "Interface do Usuário"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual tecla de atalho é usada para copiar um texto?",
-        options: ["Recortar", "Copiar", "Colar", "Desfazer"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual desses NÃO é um dispositivo de armazenamento?",
-        options: ["Unidade Flash", "Unidade de Estado Sólido", "Tela", "Disco Portátil"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "O que é um 'email'?",
-        options: ["Plataforma Social", "Correspondência Digital", "Software de Edição", "Ambiente Operacional"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual desses é um exemplo de sistema operacional livre (open source)?",
-        options: ["Windows OS", "Mac OS", "Linux Kernel", "iOS Mobile"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "O que é 'Wi-Fi'?",
-        options: ["Conexão por Fio", "Tecnologia Wireless", "Aplicativo de Navegação", "Dispositivo de Backup"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual componente é o 'cérebro' do computador?",
-        options: ["Vídeo Card", "Processador Central", "Memória de Acesso Aleatório", "Drive de Disco Rígido"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual programa é para criar planilhas?",
-        options: ["MS Word", "MS PowerPoint", "MS Excel", "Adobe Photoshop"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "Significado de PDF",
-        options: ["Formato Portátil de Documento", "Ficheiro Pessoal de Dados", "Formulário Imprimível de Documento", "Ficheiro Público Digital"],
-        answer: 0,
-        userAnswer: null
-    },
-    {
-        question: "SO da Microsoft",
-        options: ["macOS", "Ubuntu", "Windows", "Android"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "Definição de 'browser'",
-        options: ["App de Texto", "Navegador de Internet", "Software Antivírus", "Gerenciador de Sistema"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Atalho para copiar",
-        options: ["Control+X", "Control+C", "Control+V", "Control+Z"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "Qual NÃO é armazenamento?",
-        options: ["Flash Drive", "Solid State Drive", "Display", "External Drive"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "Definição de 'email'",
-        options: ["App de Mídia Social", "Mensageria Eletrônica", "App de Edição de Vídeo", "Plataforma de Sistema"],
-        answer: 1,
-        userAnswer: null
-    },
-    {
-        question: "SO livre (open source)?",
-        options: ["Windows 11", "macOS Ventura", "Linux Mint", "iOS 16"],
-        answer: 2,
-        userAnswer: null
-    },
-    {
-        question: "Definição de 'Wi-Fi'",
-        options: ["Cabo Ethernet", "Comunicação Sem Fio", "Cliente Web", "Unidade de Armazenamento"],
-        answer: 1,
-        userAnswer: null
     }
 ];
 
@@ -307,7 +127,7 @@ const wrongIconSVG = '<svg viewBox="0 0 100 100" stroke="currentColor" stroke-wi
 
 // Elementos do DOM
 // ... (existing elements)
-const detailedResultsElement = document.getElementById('detailed-results'); // Add this
+const detailedResultsElement = document.getElementById('detailed-results');
 const quizElement = document.getElementById('quiz');
 const questionElement = document.getElementById('question');
 const optionsElement = document.getElementById('options');
@@ -318,19 +138,18 @@ const resultContainerElement = document.getElementById('result-container');
 const resultScoreElement = document.getElementById('result-score');
 const resultMessageElement = document.getElementById('result-message');
 const restartButton = document.getElementById('restart-btn');
-// const detailedResultsElement = document.getElementById('detailed-results'); // This was the duplicate
 const reviewButton = document.getElementById('review-btn');
 const reviewNavElement = document.getElementById('review-nav');
 const prevReviewButton = document.getElementById('prev-review-btn');
 const nextReviewButton = document.getElementById('next-review-btn');
 const exitReviewButton = document.getElementById('exit-review-btn');
-const quizContainerElement = document.querySelector('.quiz-container'); // To add a class for review mode styling
+const quizContainerElement = document.querySelector('.quiz-container');
 const highScoreDisplayElement = document.getElementById('high-score-display');
 
 const HIGH_SCORE_KEY = 'quizHighScore';
 
 let activeQuizQuestions = [];
-const QUESTIONS_PER_SESSION = 20; // Define how many questions per quiz
+const QUESTIONS_PER_SESSION = 20; // Ensure this is 20
 
 // Function to get high score from local storage
 function getHighScore() {
@@ -345,7 +164,9 @@ function setHighScore(newScore) {
 // Function to update high score display
 function updateHighScoreDisplay() {
     const highScore = getHighScore();
-    highScoreDisplayElement.textContent = `HighScore: ${highScore}/${QUESTIONS_PER_SESSION}`; // Use QUESTIONS_PER_SESSION
+    // Now that questions array might be larger than QUESTIONS_PER_SESSION,
+    // the high score display should reflect score out of QUESTIONS_PER_SESSION.
+    highScoreDisplayElement.textContent = `HighScore: ${highScore}/${QUESTIONS_PER_SESSION}`;
 }
 
 // Variáveis do quiz
@@ -359,40 +180,30 @@ let quizCompleted = false;
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // ES6 swap
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
 
 function setupNewQuizSession() {
-    // Shuffle a copy of the main questions bank to avoid altering the original order permanently
-    // if ever needed, or shuffle original if order persistence isn't a concern.
-    // For simplicity, let's shuffle the main 'questions' array directly.
-    // If 'questions' should remain pristine, make a copy first:
-    // const shuffledBank = [...questions];
-    // shuffleArray(shuffledBank);
-    // activeQuizQuestions = shuffledBank.slice(0, QUESTIONS_PER_SESSION);
-
-    shuffleArray(questions); // Shuffles the main bank in place
+    shuffleArray(questions);
     activeQuizQuestions = questions.slice(0, QUESTIONS_PER_SESSION);
 
     currentQuestion = 0;
     score = 0;
-    quizCompleted = false; // Ensure quiz is not marked completed globally at start
+    quizCompleted = false;
     selectedOption = null;
 
-    // Reset userAnswer for the active quiz questions
     activeQuizQuestions.forEach(q => {
         q.userAnswer = null;
     });
 
-    // Any other UI resets needed at the very start of a new session
     if (progressBarElement) progressBarElement.style.width = '0%';
     if (nextButton) {
         nextButton.textContent = 'Próxima Pergunta';
         nextButton.disabled = true;
     }
     if (resultContainerElement) resultContainerElement.style.display = 'none';
-    if (quizElement) quizElement.style.display = 'block'; // Ensure quiz area is visible
+    if (quizElement) quizElement.style.display = 'block';
     if (reviewNavElement) reviewNavElement.style.display = 'none';
     if (reviewButton) reviewButton.style.display = 'none';
     if (detailedResultsElement) detailedResultsElement.innerHTML = '<h3>Resumo Detalhado:</h3>';
@@ -402,7 +213,6 @@ function setOptionIcon(optionElement, iconSVG = '', iconColorClass = '') {
     const iconContainer = optionElement.querySelector('.feedback-icon-container');
     if (iconContainer) {
         iconContainer.innerHTML = iconSVG;
-        // Reset color classes
         iconContainer.classList.remove('icon-color-primary', 'icon-color-success', 'icon-color-danger');
         if (iconColorClass) {
             iconContainer.classList.add(iconColorClass);
@@ -412,21 +222,32 @@ function setOptionIcon(optionElement, iconSVG = '', iconColorClass = '') {
 
 function clearAllOptionIcons() {
     document.querySelectorAll('.option').forEach(optElement => {
-        setOptionIcon(optElement); // Clear icon and color class
+        setOptionIcon(optElement);
     });
 }
 
 // Carregar questão
 function loadQuestion() {
     quizContainerElement.classList.remove('review-mode');
-    clearAllOptionIcons(); // Clear icons from previous question
-    quizCompleted = false; // Reset for the new question
+    clearAllOptionIcons();
+    quizCompleted = false;
 
-    const questionData = activeQuizQuestions[currentQuestion]; // Use activeQuizQuestions
+    const questionData = activeQuizQuestions[currentQuestion];
     questionElement.textContent = questionData.question;
     optionsElement.innerHTML = '';
 
-    questionData.options.forEach((optionString, index) => {
+    // Store the original correct answer's text
+    const originalCorrectAnswerText = questionData.options[questionData.answer];
+
+    // Create a copy of the options to shuffle for display
+    let ऑप्शन्सफॉरडिस्प्ले = [...questionData.options]; // Using a non-English variable name to avoid collision
+    shuffleArray(ऑप्शन्सफॉरडिस्प्ले);
+    questionData.displayedOptions = ऑप्शन्सफॉरडिस्प्ले; // ADD THIS LINE
+
+    // Find the new index of the original correct answer in the shuffled list
+    questionData.shuffledAnswerIndex = ऑप्शन्सफॉरडिस्प्ले.indexOf(originalCorrectAnswerText);
+
+    ऑप्शन्सफॉरडिस्प्ले.forEach((optionString, index) => {
         const optionElement = document.createElement('div');
         optionElement.classList.add('option');
 
@@ -439,85 +260,85 @@ function loadQuestion() {
         iconContainer.classList.add('feedback-icon-container');
         optionElement.appendChild(iconContainer);
 
-        optionElement.dataset.index = index;
-        optionElement.addEventListener('click', selectOption); // Ensure listener is present
-        optionElement.style.cursor = 'pointer'; // Ensure cursor is pointer
-        optionsElement.appendChild(optionElement); // Append the fully constructed optionElement here
+        optionElement.dataset.index = index; // This index is for the shuffled position
+        optionElement.addEventListener('click', selectOption);
+        optionElement.style.cursor = 'pointer';
+        optionsElement.appendChild(optionElement);
     });
 
     updateProgress();
     nextButton.style.display = 'inline-block';
     reviewNavElement.style.display = 'none';
-    nextButton.textContent = 'Próxima Pergunta'; // Reset button text from "Ver Resultado"
+    nextButton.textContent = 'Próxima Pergunta';
     nextButton.disabled = true;
     selectedOption = null;
 }
 
 // Selecionar opção
 function selectOption(e) {
-    if (quizCompleted) return; // Don't allow selection if quiz/question is 'done'
+    if (quizCompleted) return;
 
-    const selectedElement = e.target.closest('.option'); // Ensure we get the .option div
-    if (!selectedElement) return; // Click was not on an option or its child
+    const selectedElement = e.target.closest('.option');
+    if (!selectedElement) return;
 
     const optionIndex = parseInt(selectedElement.dataset.index);
 
-    // Clear previous visual selections and icons
     const allOptionElements = document.querySelectorAll('.option');
     allOptionElements.forEach(opt => {
         opt.classList.remove('selected');
-        setOptionIcon(opt); // Clear icon and its specific color
+        setOptionIcon(opt);
     });
 
-    // Mark new selection
     selectedElement.classList.add('selected');
-    setOptionIcon(selectedElement, selectedIconSVG, 'icon-color-primary'); // Show selected icon with primary color
+    setOptionIcon(selectedElement, selectedIconSVG, 'icon-color-primary');
 
     selectedOption = optionIndex;
-    activeQuizQuestions[currentQuestion].userAnswer = optionIndex; // Use activeQuizQuestions
+    activeQuizQuestions[currentQuestion].userAnswer = optionIndex;
     nextButton.disabled = false;
 }
 
 // Verificar resposta
 function checkAnswer() {
-    const question = activeQuizQuestions[currentQuestion]; // Use activeQuizQuestions
-    const allOptionElements = document.querySelectorAll('.option'); // Get all option elements
-    // const selectedOptionElement = allOptionElements[selectedOption]; // User's chosen option element - Not strictly needed with current logic
-    // const correctOptionElement = allOptionElements[question.answer]; // Actual correct option element - Not strictly needed
+    const question = activeQuizQuestions[currentQuestion]; // Already gets from activeQuizQuestions
+    const allOptionElements = document.querySelectorAll('.option');
 
-    quizCompleted = true; // Mark question as 'answered' to prevent re-selection
-    nextButton.disabled = false; // Enable next button
+    quizCompleted = true;
+    nextButton.disabled = false;
 
-    // Update classes and icons
+    // The 'selectedOption' variable holds the index from the shuffled display.
+    // 'question.shuffledAnswerIndex' holds the index of the correct answer IN THE SHUFFLED DISPLAY.
+    const isCorrect = (selectedOption === question.shuffledAnswerIndex);
+
     allOptionElements.forEach((optElement, index) => {
-        // Clear any neutral "selected" icon first before applying final correct/wrong
-        setOptionIcon(optElement); // Clears current icon (like the selected dot)
+        setOptionIcon(optElement); // Clear any "selected" dot icon
 
-        if (index === question.answer) { // This is the correct answer
+        // Highlight the actual correct option (using shuffledAnswerIndex)
+        if (index === question.shuffledAnswerIndex) {
             optElement.classList.add('correct');
-            // Always show correct icon on the correct answer, even if not selected by user
             setOptionIcon(optElement, correctIconSVG, 'icon-color-success');
         }
 
-        if (index === selectedOption) { // This is what the user picked
-            if (selectedOption === question.answer) {
-                // Already handled by above block, class 'correct' is added
-                // Icon is already set to correctIconSVG
+        // Highlight the user's choice
+        if (index === selectedOption) {
+            if (isCorrect) {
+                // 'correct' class and icon already applied if it's the correct one
+                // optElement.classList.add('correct'); // Redundant if selectedOption === question.shuffledAnswerIndex
+                // setOptionIcon(optElement, correctIconSVG, 'icon-color-success'); // Redundant
             } else {
                 optElement.classList.add('wrong');
                 setOptionIcon(optElement, wrongIconSVG, 'icon-color-danger');
             }
         }
-        // Make options non-interactive after answer is revealed for this question
+
         optElement.removeEventListener('click', selectOption);
         optElement.style.cursor = 'default';
     });
 
-    if (selectedOption === question.answer) {
+    if (isCorrect) {
         score++;
     }
 
-    nextButton.textContent = currentQuestion < QUESTIONS_PER_SESSION - 1 ? 'Próxima Pergunta' : 'Ver Resultado'; // Use QUESTIONS_PER_SESSION
+    nextButton.textContent = currentQuestion < QUESTIONS_PER_SESSION - 1 ? 'Próxima Pergunta' : 'Ver Resultado';
 }
 
 // Próxima questão ou mostrar resultado
@@ -526,7 +347,7 @@ function nextQuestion() {
 
     checkAnswer();
 
-    if (currentQuestion < QUESTIONS_PER_SESSION - 1) { // Use QUESTIONS_PER_SESSION
+    if (currentQuestion < QUESTIONS_PER_SESSION - 1) {
         currentQuestion++;
         loadQuestion();
     } else {
@@ -536,18 +357,18 @@ function nextQuestion() {
 
 // Atualizar progresso
 function updateProgress() {
-    const progress = ((currentQuestion + 1) / QUESTIONS_PER_SESSION) * 100; // Use QUESTIONS_PER_SESSION
+    const progress = ((currentQuestion + 1) / QUESTIONS_PER_SESSION) * 100;
     progressBarElement.style.width = `${progress}%`;
-    questionCounterElement.textContent = `Pergunta ${currentQuestion + 1} de ${QUESTIONS_PER_SESSION}`; // Use QUESTIONS_PER_SESSION
+    questionCounterElement.textContent = `Pergunta ${currentQuestion + 1} de ${QUESTIONS_PER_SESSION}`;
 }
 
 // Mostrar resultado
 function showResult() {
     quizElement.style.display = 'none';
     resultContainerElement.style.display = 'block';
-    resultScoreElement.textContent = `${score}/${QUESTIONS_PER_SESSION}`; // Use QUESTIONS_PER_SESSION
+    resultScoreElement.textContent = `${score}/${QUESTIONS_PER_SESSION}`;
 
-    const percentage = (score / QUESTIONS_PER_SESSION) * 100; // Use QUESTIONS_PER_SESSION
+    const percentage = (score / QUESTIONS_PER_SESSION) * 100;
     let message = '';
 
     if (percentage >= 80) {
@@ -561,20 +382,18 @@ function showResult() {
     }
 
     resultMessageElement.textContent = message;
-    quizCompleted = true; // Quiz is completed, but not necessarily review
-    reviewButton.style.display = 'inline-block'; // Show review button
+    quizCompleted = true;
+    reviewButton.style.display = 'inline-block';
 
-    // Check and update high score
     const currentHighScore = getHighScore();
     if (score > currentHighScore) {
         setHighScore(score);
-        updateHighScoreDisplay(); // Update display immediately
-        // Optionally, add a message like "New High Score!"
+        updateHighScoreDisplay();
         resultMessageElement.textContent += " Parabéns, novo recorde!";
     }
 
     detailedResultsElement.innerHTML = '<h3>Resumo Detalhado:</h3>';
-    activeQuizQuestions.forEach((q, index) => { // Use activeQuizQuestions
+    activeQuizQuestions.forEach((q, index) => {
         const resultItem = document.createElement('div');
         resultItem.classList.add('result-item');
 
@@ -584,7 +403,6 @@ function showResult() {
 
         const userAnswerTextP = document.createElement('p');
         userAnswerTextP.classList.add('user-answer');
-        // q.options[q.userAnswer] will now be a string
         const userAnswerDisplay = q.userAnswer !== null ? q.options[q.userAnswer] : "Não respondida";
         userAnswerTextP.innerHTML = `Sua resposta: <span class="${q.userAnswer === q.answer ? 'correct' : 'wrong'}">${userAnswerDisplay}</span>`;
         if (q.userAnswer === null) {
@@ -592,11 +410,10 @@ function showResult() {
         }
 
         const correctAnswerTextP = document.createElement('p');
-        // q.options[q.answer] will now be a string
         const correctAnswerDisplay = q.options[q.answer];
         correctAnswerTextP.innerHTML = `Resposta correta: <span class="correct-answer">${correctAnswerDisplay}</span>`;
 
-        resultItem.appendChild(questionText); // Corrected: questionTextP to questionText
+        resultItem.appendChild(questionText);
         resultItem.appendChild(userAnswerTextP);
         resultItem.appendChild(correctAnswerTextP);
         detailedResultsElement.appendChild(resultItem);
@@ -605,27 +422,25 @@ function showResult() {
 
 // Reiniciar quiz
 function restartQuiz() {
-    if (isInReviewMode) { // Check if in review mode before calling exitReviewMode
+    if (isInReviewMode) {
         exitReviewMode();
     }
-    setupNewQuizSession(); // Setup a new randomized set of 20 questions and reset states
-    loadQuestion();        // Load the first question of the new session
-
-    // updateHighScoreDisplay(); // Not strictly needed here as it doesn't change on restart, only on load or new high score
+    setupNewQuizSession();
+    loadQuestion();
 }
 
 function enterReviewMode() {
     isInReviewMode = true;
     currentReviewQuestionIndex = 0;
-    quizCompleted = true; // Keep this true so options are not clickable by default selectOption logic
+    quizCompleted = true;
 
-    resultContainerElement.style.display = 'none'; // Hide results page
-    quizElement.style.display = 'block'; // Show quiz area for review
-    quizContainerElement.classList.add('review-mode'); // Add class for specific review styling
+    resultContainerElement.style.display = 'none';
+    quizElement.style.display = 'block';
+    quizContainerElement.classList.add('review-mode');
 
-    nextButton.style.display = 'none'; // Hide original next button
-    questionCounterElement.style.display = 'block'; // Ensure counter is visible
-    reviewNavElement.style.display = 'flex'; // Show review navigation
+    nextButton.style.display = 'none';
+    questionCounterElement.style.display = 'block';
+    reviewNavElement.style.display = 'flex';
 
     loadReviewQuestion();
 }
@@ -633,35 +448,36 @@ function enterReviewMode() {
 function exitReviewMode() {
     isInReviewMode = false;
     quizContainerElement.classList.remove('review-mode');
-    reviewNavElement.style.display = 'none'; // Hide review navigation
+    reviewNavElement.style.display = 'none';
 
-    // Decide what to show after exiting: results or start screen
-    // For now, let's go back to the results screen
     quizElement.style.display = 'none';
     resultContainerElement.style.display = 'block';
-    nextButton.style.display = 'inline-block'; // Show original next button if needed later
-    // Restore the main quiz next button's correct state (visible if quiz not at end, hidden if it was)
-    if (currentQuestion >= QUESTIONS_PER_SESSION -1 && !isInReviewMode) { // Check if quiz was at its end (use QUESTIONS_PER_SESSION)
-        nextButton.style.display = 'none'; // Should be "Ver Resultado" or hidden
+    nextButton.style.display = 'inline-block';
+
+    if (currentQuestion >= QUESTIONS_PER_SESSION -1 && !isInReviewMode) {
+        nextButton.style.display = 'none';
     } else {
         nextButton.style.display = 'inline-block';
     }
 }
 
 function loadReviewQuestion() {
-    quizContainerElement.classList.add('review-mode'); // Ensure review mode class is on
-    // clearAllOptionIcons(); // Optional: Clear all icons upfront if needed, though setOptionIcon below will overwrite
-
-    const questionData = activeQuizQuestions[currentReviewQuestionIndex]; // Use activeQuizQuestions
+    quizContainerElement.classList.add('review-mode');
+    const questionData = activeQuizQuestions[currentReviewQuestionIndex];
     questionElement.textContent = questionData.question;
-    optionsElement.innerHTML = ''; // Clear previous options
+    optionsElement.innerHTML = '';
 
-    questionData.options.forEach((optionString, index) => {
+    // Get the text of the option the user actually selected during the quiz.
+    // questionData.userAnswer is the index from the shuffled 'displayedOptions'.
+    const userSelectedOptionText = (questionData.userAnswer !== null && questionData.displayedOptions)
+                                   ? questionData.displayedOptions[questionData.userAnswer]
+                                   : null;
+
+    // Iterate over the ORIGINAL options for display
+    questionData.options.forEach((optionString, originalIndex) => {
         const optionElement = document.createElement('div');
         optionElement.classList.add('option');
-        // Make options non-interactive in review mode by default
         optionElement.style.cursor = 'default';
-        // No event listener for selection needed here
 
         const textSpan = document.createElement('span');
         textSpan.classList.add('option-text');
@@ -672,36 +488,36 @@ function loadReviewQuestion() {
         iconContainer.classList.add('feedback-icon-container');
         optionElement.appendChild(iconContainer);
 
-        // Initial state: clear any icon from previous rendering of this option slot
-        setOptionIcon(optionElement);
+        setOptionIcon(optionElement); // Clear any previous icon
 
-        // Style for the actual correct answer
-        if (index === questionData.answer) {
-            optionElement.classList.add('review-correct'); // Existing class for background
-            setOptionIcon(optionElement, correctIconSVG, 'icon-color-success');
+        // Is this current original option the actual correct answer?
+        // Use questionData.answer (index for original options array)
+        if (originalIndex === questionData.answer) {
+            optionElement.classList.add('review-correct'); // Background color
+            setOptionIcon(optionElement, correctIconSVG, 'icon-color-success'); // Correct icon
         }
 
-        // Style for the user's answer
-        if (index === questionData.userAnswer) {
-            optionElement.classList.add('review-user-selected'); // Existing class for potential border/emphasis
+        // Was this current original option (by its text) the one the user selected?
+        if (userSelectedOptionText !== null && optionString === userSelectedOptionText) {
+            optionElement.classList.add('review-user-selected'); // Border/emphasis
 
-            if (questionData.userAnswer !== questionData.answer) {
-                optionElement.classList.add('review-user-wrong'); // Existing class for background
-                // If user was wrong, their selection gets the wrong icon.
-                // If it was also the correct answer (which is impossible if wrong),
-                // the correctIconSVG would have taken precedence or caused conflict.
-                // So, this is fine.
-                setOptionIcon(optionElement, wrongIconSVG, 'icon-color-danger');
+            // If the user's selected text is not the text of the actual correct answer
+            if (userSelectedOptionText !== questionData.options[questionData.answer]) {
+                optionElement.classList.add('review-user-wrong'); // Background color for user's wrong choice
+                // Add wrong icon only if it's not the already marked correct one (this check is important)
+                if (originalIndex !== questionData.answer) {
+                    setOptionIcon(optionElement, wrongIconSVG, 'icon-color-danger');
+                }
             }
-            // If userAnswer IS the correct answer, the correctIconSVG is already set by the block above.
+            // If userSelectedOptionText IS the correct answer's text,
+            // the 'review-correct' class and correct icon are already set from the block above.
         }
-
         optionsElement.appendChild(optionElement);
     });
 
-    questionCounterElement.textContent = `Revisando Pergunta ${currentReviewQuestionIndex + 1} de ${QUESTIONS_PER_SESSION}`; // Use QUESTIONS_PER_SESSION
+    questionCounterElement.textContent = `Revisando Pergunta ${currentReviewQuestionIndex + 1} de ${QUESTIONS_PER_SESSION}`;
     prevReviewButton.disabled = currentReviewQuestionIndex === 0;
-    nextReviewButton.disabled = currentReviewQuestionIndex === QUESTIONS_PER_SESSION - 1; // Use QUESTIONS_PER_SESSION
+    nextReviewButton.disabled = currentReviewQuestionIndex === QUESTIONS_PER_SESSION - 1;
 }
 
 // Event listeners
@@ -718,7 +534,7 @@ prevReviewButton.addEventListener('click', () => {
 });
 
 nextReviewButton.addEventListener('click', () => {
-    if (currentReviewQuestionIndex < QUESTIONS_PER_SESSION - 1) { // Use QUESTIONS_PER_SESSION
+    if (currentReviewQuestionIndex < QUESTIONS_PER_SESSION - 1) {
         currentReviewQuestionIndex++;
         loadReviewQuestion();
     }
@@ -726,8 +542,8 @@ nextReviewButton.addEventListener('click', () => {
 
 // Initial setup calls
 document.addEventListener('DOMContentLoaded', () => {
-    setupNewQuizSession(); // Setup the randomized 20 questions
-    loadQuestion();        // Load the first question of the new session
+    setupNewQuizSession();
+    loadQuestion();
 
     updateHighScoreDisplay();
     if (reviewButton) reviewButton.style.display = 'none';
