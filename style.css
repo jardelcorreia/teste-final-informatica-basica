@@ -351,6 +351,95 @@ h1 {
     }
 }
 
+/* Footer Styles */
+footer {
+    background-color: var(--dark-color); /* Using the dark color from the theme */
+    color: #A0AEC0; /* Light gray text, good contrast on dark bg */
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 40px; /* Space above the footer */
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+}
+
+.footer-content {
+    max-width: 800px; /* Align with quiz container max-width */
+    margin: 0 auto; /* Center content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.developer-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+}
+
+.dev-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circular photo */
+    object-fit: cover;
+    margin-right: 20px;
+    border: 3px solid var(--primary-color); /* Accent border */
+}
+
+.dev-details {
+    text-align: left; /* Align text to left if photo is on left */
+}
+
+.dev-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #E2E8F0; /* Lighter text for name */
+    margin-bottom: 5px;
+}
+
+.dev-links a {
+    color: #A0AEC0; /* Match footer text color */
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.dev-links a:hover {
+    color: var(--primary-color); /* Accent color on hover */
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #718096; /* Slightly darker gray for copyright */
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 768px) {
+    .developer-info {
+        flex-direction: column; /* Stack photo and details vertically */
+        text-align: center; /* Center text when stacked */
+    }
+
+    .dev-photo {
+        margin-right: 0;
+        margin-bottom: 15px; /* Space below photo when stacked */
+    }
+
+    .dev-details {
+        text-align: center; /* Center details text when stacked */
+    }
+
+    .dev-links a {
+        margin: 5px 8px; /* Adjust margin for better spacing when links might wrap */
+        display: inline-block; /* Helps with spacing if they wrap */
+    }
+
+    .footer-content {
+        padding: 20px 15px;
+    }
+}
+
 /* Styles for detailed-results */
 
 .detailed-results {
