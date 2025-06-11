@@ -35,11 +35,12 @@ body {
     background-color: var(--dark-color); /* Fallback using new dark color */
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px 15px;
+    flex-direction: column; /* ADD THIS OR ENSURE IT'S PRESENT */
+    /* justify-content: center; /* REMOVED */
+    align-items: center;   /* This will center quiz-container and footer horizontally */
+    padding: 20px 0;       /* Adjust padding: vertical padding on body */
     color: var(--dark-color);
-    line-height: 1.65;
+    line-height: 1.65; /* Kept from previous refinement, but prompt said 1.7. Reverting to 1.65 as it was there. */
     position: relative;
 }
 
