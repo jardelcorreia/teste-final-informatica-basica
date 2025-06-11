@@ -393,23 +393,37 @@ function showResult() {
     }
 
     detailedResultsElement.innerHTML = '<h3>Resumo Detalhado:</h3>';
-    activeQuizQuestions.forEach((q, index) => {
+    activeQuizQuestions.forEach((q, index) => { // q is an object from activeQuizQuestions
         const resultItem = document.createElement('div');
         resultItem.classList.add('result-item');
 
-        const questionText = document.createElement('p');
+        const questionText = document.createElement('p'); // Ensure this variable name is consistent
         questionText.classList.add('question-text');
         questionText.textContent = `P${index + 1}: ${q.question}`;
 
         const userAnswerTextP = document.createElement('p');
         userAnswerTextP.classList.add('user-answer');
-        const userAnswerDisplay = q.userAnswer !== null ? q.options[q.userAnswer] : "Não respondida";
-        userAnswerTextP.innerHTML = `Sua resposta: <span class="${q.userAnswer === q.answer ? 'correct' : 'wrong'}">${userAnswerDisplay}</span>`;
+
+        // CORRECTED: Use q.displayedOptions to get the text of the answer the user saw and selected.
+        // q.userAnswer is the index into q.displayedOptions.
+        const userAnswerDisplay = (q.userAnswer !== null && q.displayedOptions && q.displayedOptions[q.userAnswer] !== undefined)
+                                  ? q.displayedOptions[q.userAnswer]
+                                  : "Não respondida";
+
+        // The class for styling ('correct' or 'wrong') should be based on whether
+        // the user's selection index matched the shuffled correct answer index.
+        const userWasCorrect = (q.userAnswer === q.shuffledAnswerIndex);
+        userAnswerTextP.innerHTML = `Sua resposta: <span class="${userWasCorrect ? 'correct' : 'wrong'}">${userAnswerDisplay}</span>`;
+
         if (q.userAnswer === null) {
-            userAnswerTextP.querySelector('span').classList.remove('correct', 'wrong');
+            const spanElement = userAnswerTextP.querySelector('span');
+            if(spanElement) {
+                 spanElement.classList.remove('correct', 'wrong');
+            }
         }
 
         const correctAnswerTextP = document.createElement('p');
+        // The actual correct answer text comes from the original options array using the original answer index.
         const correctAnswerDisplay = q.options[q.answer];
         correctAnswerTextP.innerHTML = `Resposta correta: <span class="correct-answer">${correctAnswerDisplay}</span>`;
 
